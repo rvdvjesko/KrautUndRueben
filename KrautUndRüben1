@@ -17,7 +17,7 @@ CREATE TABLE kunde (
     );
 
 CREATE TABLE zutat(
-    zutatennr	     INTEGER NOT NULL,
+    zutat_id	     INTEGER NOT NULL,
     bezeichnung      VARCHAR(50),
     einheit          VARCHAR (25),
     nettopreis       DECIMAL(10,2),
