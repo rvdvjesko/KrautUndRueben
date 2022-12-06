@@ -22,10 +22,7 @@ CREATE TABLE zutat(
     einheit          VARCHAR (25),
     nettopreis       DECIMAL(10,2),
     bestand          INTEGER,
-    lieferant	     INTEGER,
-    kalorien	     INTEGER,
-    kohlenhydrate    DECIMAL (10,2),
-    protein	     DECIMAL(10,2)
+    lieferant	     INTEGER
 );
 
 CREATE TABLE bestellung (
