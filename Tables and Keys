@@ -9,7 +9,7 @@ CREATE TABLE Kunde (
   Geburtsdatum date,
   Straße varchar(50),
   Hausnummer varchar(10),
-  PLZ varchar(5),
+  Postleitzahl varchar(5),
   Ort varchar(50),
   Telefon varchar(25),
   email varchar(50),
