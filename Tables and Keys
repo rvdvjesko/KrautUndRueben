@@ -1,0 +1,159 @@
+DROP DATABASE IF EXISTS krautundruebenDemo;
+CREATE DATABASE IF NOT EXISTS krautundruebenDemo;
+USE krautundruebenDemo;
+
+CREATE TABLE Kunde (
+  Kunde_ID int AUTO_INCREMENT NOT NULL,
+  Vorname varchar(50),
+  Nachname varchar(50),
+  Geburtsdatum date,
+  Straße varchar(50),
+  Hausnummer varchar(10),
+  Postleitzahl varchar(5),
+  Ort varchar(50),
+  Telefon varchar(25),
+  email varchar(50),
+  PRIMARY KEY (kunde_id)
+);
+
+CREATE TABLE bestellung (
+  Bestellung_ID int AUTO_INCREMENT NOT NULL,
+  Bestelldatum date,
+  Rechnungsbetrag decimal(10,2),
+  Kunde_ID int,
+  Zutat_ID int,
+  PRIMARY KEY(Bestellung_ID)
+);
+
+CREATE TABLE Bestellung_enthält_Zutat (
+	Bestellung_ID int,
+	Zutat_ID int,
+	Menge int,
+	PRIMARY KEY (Bestellung_ID, Zutat_ID) -- auch FK
+);
+
+
+CREATE TABLE Zutat (
+	Zutat_ID int AUTO_INCREMENT NOT NULL,
+	Zutatname varchar(50),
+	Mengeneinheit int,
+	Bestand int,
+	Nettopreis decimal(10,2),
+	Nährstoffangabe_ID int,
+	PRIMARY KEY (Zutat_ID)
+);
+
+CREATE TABLE Lieferant_liefert_Zutat (
+	Lieferant_ID int,
+	Zutat_ID int,
+	Menge int,
+	PRIMARY KEY(Lieferant_ID, Zutat_ID) -- auch FK
+);
+
+CREATE TABLE Lieferant (
+	Lieferant_ID int AUTO_INCREMENT NOT NULL,
+	Lieferantenname varchar(50),
+	Straße varchar(50),
+	Hausnummer varchar(10),
+	Postleitzahl varchar(5),
+	Ort varchar(50),
+	Telefonnummer varchar(50),
+	email varchar(50),
+	PRIMARY KEY (Lieferant_ID)
+);
+
+CREATE TABLE Rezept_enthält_Zutat (
+	Rezept_ID int,
+	Zutat_ID int,
+	Menge int,
+	PRIMARY KEY (Rezept_ID, Zutat_ID) -- auch FK
+);
+
+CREATE TABLE Rezept (
+	Rezept_ID int,
+	Rezeptname varchar(50),
+	Nährstoffangabe_ID int,-- FK
+	PRIMARY KEY (Rezept_ID)
+);
+
+CREATE TABLE Mengeneinheit (
+	Mengeneinheit_ID int,
+	Mengeneinheit varchar(50),
+	PRIMARY KEY (Mengeneinheit_ID)
+);
+
+CREATE TABLE Nährstoffangabe (
+	Nährstoff_ID int AUTO_INCREMENT NOT NULL,
+	Kalorien decimal(5,2),
+	Natrium decimal(5,2),
+	Ballaststoffe decimal(5,2),
+	Protein decimal(5,2),
+	Kohlenhydrate decimal(5,2),
+	davon_Zucker decimal(5,2),
+	Fett decimal(5,2),
+	gesättigte_Fettsäuren decimal(5,2),
+	PRIMARY KEY (Nährstoff_ID)
+);
+
+CREATE TABLE Zutat_enthält_Ernährungskategorie (
+	Zutat_ID int,
+	Ernährungskategorie_ID int,
+	PRIMARY KEY (Zutat_ID, Ernährungskategorie_ID) -- auch FK
+);
+
+CREATE TABLE Zutat_enthält_Beschränkung (
+	Zutat_ID int,
+	Beschränkung_ID int,
+	PRIMARY KEY (Zutat_ID, Beschränkung_ID) -- auch FK
+);
+
+CREATE TABLE Ernährungskategorie (
+	Ernährungskategorie_ID int,
+	Ernährungskategorie varchar(50),
+	PRIMARY KEY(Ernährungskategorie_ID)
+);
+
+CREATE TABLE Beschränkung (
+	Beschränkung_ID int,
+	Beschränkung varchar(50),
+	PRIMARY KEY(Beschränkung_ID)
+);
+
+CREATE TABLE Rezept_enthält_Ernährungskategorie (
+	Rezept_ID int,
+	Ernährungskategorie_ID int,
+	PRIMARY KEY(Rezept_ID, Ernährungskategorie_ID)
+);
+
+
+
+
+
+/******************************************************************************/
+/***                              Foreign Keys                              ***/
+/******************************************************************************/
+ALTER TABLE Bestellung ADD FOREIGN KEY (Kunde_ID) REFERENCES Kunde(Kunde_ID);
+ALTER TABLE Bestellung ADD FOREIGN KEY (Zutat_ID) REFERENCES Zutat(Zutat_ID); 
+
+ALTER TABLE Bestellung_enthält_Zutat ADD FOREIGN KEY (Bestellung_ID) REFERENCES Bestellung(Bestellung_ID);
+ALTER TABLE Bestellung_enthält_Zutat ADD FOREIGN KEY (Zutat_ID) REFERENCES Zutat(Zutat_ID);
+
+ALTER TABLE Zutat ADD FOREIGN KEY (Nährstoffangabe_ID) REFERENCES Nährstoffangabe(Nährstoff_ID);
+ALTER TABLE Zutat ADD FOREIGN KEY (Mengeneinheit) REFERENCES Mengeneinheit(Mengeneinheit_ID);
+
+ALTER TABLE Lieferant_liefert_Zutat ADD FOREIGN KEY (Lieferant_ID) REFERENCES Lieferant(Lieferant_ID);
+ALTER TABLE Lieferant_liefert_Zutat ADD FOREIGN KEY (Zutat_ID) REFERENCES Zutat(Zutat_ID);
+
+ALTER TABLE Rezept_enthält_Zutat ADD FOREIGN KEY (Rezept_ID) REFERENCES Rezept(Rezept_ID);
+ALTER TABLE Rezept_enthält_Zutat ADD FOREIGN KEY (Zutat_ID) REFERENCES Zutat(Zutat_ID);
+
+ALTER TABLE Rezept ADD FOREIGN KEY (Nährstoffangabe_ID) REFERENCES Nährstoffangabe(Nährstoff_ID);
+
+ALTER TABLE Zutat_enthält_Ernährungskategorie ADD FOREIGN KEY (Zutat_ID) REFERENCES Zutat(Zutat_ID);
+ALTER TABLE Zutat_enthält_Ernährungskategorie ADD FOREIGN KEY (Ernährungskategorie_ID) REFERENCES Ernährungskategorie(Ernährungskategorie_ID);
+
+ALTER TABLE Zutat_enthält_Beschränkung ADD FOREIGN KEY (Zutat_ID) REFERENCES Zutat(Zutat_ID);
+ALTER TABLE Zutat_enthält_Beschränkung ADD FOREIGN KEY (Beschränkung_ID) REFERENCES Beschränkung(Beschränkung_ID);
+
+ALTER TABLE Rezept_enthält_Ernährungskategorie ADD FOREIGN KEY (Rezept_ID) REFERENCES Rezept (Rezept_ID);
+ALTER TABLE Rezept_enthält_Ernährungskategorie ADD FOREIGN KEY (Ernährungskategorie_ID) REFERENCES Ernährungskategorie (Ernährungskategorie_ID);

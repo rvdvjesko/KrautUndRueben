@@ -3,54 +3,51 @@ CREATE DATABASE IF NOT EXISTS krautundrueben;
 USE krautundrueben;
 
 
-CREATE TABLE KUNDE (
-    KUNDENNR        INTEGER NOT NULL,
-    NACHNAME        VARCHAR(50),
-    VORNAME         VARCHAR(50),
-    GEBURTSDATUM	  DATE,
-	 STRASSE         VARCHAR(50),
-	 HAUSNR			  VARCHAR(6),			
-    PLZ             VARCHAR(5),
-    ORT             VARCHAR(50),
-    TELEFON         VARCHAR(25),
-    EMAIL           VARCHAR(50)
+CREATE TABLE kunde (
+    kunden_nr        INTEGER NOT NULL,
+    nachname        VARCHAR(50),
+    vorname         VARCHAR(50),
+    geburtsdatum	  DATE,
+    strasse         VARCHAR(50),
+    hausnr	     VARCHAR(6),			
+    plz             VARCHAR(5),
+    ort             VARCHAR(50),
+    telefon         VARCHAR(25),
+    email           VARCHAR(50)
     );
 
-CREATE TABLE ZUTAT(
-    ZUTATENNR			INTEGER NOT NULL,
-    BEZEICHNUNG      VARCHAR(50),
-    EINHEIT        	VARCHAR (25),
-    NETTOPREIS       DECIMAL(10,2),
-    BESTAND          INTEGER,
-    LIEFERANT			INTEGER,
-	 KALORIEN			INTEGER,
-	 KOHLENHYDRATE		DECIMAL (10,2),
-	 PROTEIN				DECIMAL(10,2)
+CREATE TABLE zutat(
+    zutat_id	     INTEGER NOT NULL,
+    bezeichnung      VARCHAR(50),
+    einheit          VARCHAR (25),
+    nettopreis       DECIMAL(10,2),
+    bestand          INTEGER,
+    lieferant	     INTEGER
 );
 
-CREATE TABLE BESTELLUNG (
-    BESTELLNR        INTEGER AUTO_INCREMENT NOT NULL,
-    KUNDENNR         INTEGER,
-    BESTELLDATUM     DATE,
-    RECHNUNGSBETRAG  DECIMAL(10,2),
+CREATE TABLE bestellung (
+    bestellnr        INTEGER AUTO_INCREMENT NOT NULL,
+    kundennr         INTEGER,
+    bestelldatum     DATE,
+    rechnungsbetrag  DECIMAL(10,2),
     PRIMARY KEY (BESTELLNR)
 );
 
-CREATE TABLE BESTELLUNGZUTAT (
-    BESTELLNR       INTEGER NOT NULL,
-    ZUTATENNR       INTEGER,
-    MENGE     		  INTEGER
+CREATE TABLE bestellungzutat (
+    bestellnr       INTEGER NOT NULL,
+    zutatennr       INTEGER,
+    menge     	    INTEGER
 );
 
-CREATE TABLE LIEFERANT (
-    LIEFERANTENNR   INTEGER NOT NULL,
-    LIEFERANTENNAME VARCHAR(50),
-    STRASSE         VARCHAR(50),
-    HAUSNR			  VARCHAR(6),
-    PLZ             VARCHAR(5),
-    ORT             VARCHAR(50),
-    TELEFON			  VARCHAR(25),
-    EMAIL           VARCHAR(50)
+CREATE TABLE lieferant (
+    lieferantennr   INTEGER NOT NULL,
+    lieferrantenname VARCHAR(50),
+    strasse         VARCHAR(50),
+    hausnr	    VARCHAR(6),
+    plz             VARCHAR(5),
+    ort             VARCHAR(50),
+    telefon	    VARCHAR(25),
+    email           VARCHAR(50)
 );
 
 /******************************************************************************/
