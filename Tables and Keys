@@ -71,7 +71,7 @@ CREATE TABLE Rezept_enthält_Zutat (
 );
 
 CREATE TABLE Rezept (
-	Rezept_ID int,
+	Rezept_ID int AUTO_INCREMENT NOT NULL,
 	Rezeptname varchar(50),
 	-- Nährstoffangabe_ID int,-- FK
 	PRIMARY KEY (Rezept_ID)
