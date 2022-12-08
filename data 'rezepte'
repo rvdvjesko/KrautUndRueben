@@ -1,0 +1,10 @@
+INSERT INTO Rezept values (1, 'Kartoffelsuppe');
+INSERT INTO Rezept values (2, 'Tomatensuppe');
+INSERT INTO Rezept values (3, '');
+INSERT INTO Rezept values (4, '');
+INSERT INTO Rezept values (5, '');
+INSERT INTO Rezept values (6, '');
+INSERT INTO Rezept values (7, '');
+INSERT INTO Rezept values (8, '');
+INSERT INTO Rezept values (9, '');
+INSERT INTO Rezept values (10, '');
