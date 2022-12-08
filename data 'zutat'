@@ -1,0 +1,46 @@
+
+INSERT INTO Zutat (Zutat_ID, Zutatname, Mengeneinheit, Nettopreis, Bestand,  Kalorien, Kohlenhydrate, Protein) VALUES (1001,'Zucchini',1, 0.89, 100, 19,2,1.6);
+
+INSERT INTO Zutat (Zutat_ID, Zutatname, Mengeneinheit, Nettopreis, Bestand,  Kalorien, Kohlenhydrate, Protein) VALUES (1002,'Zwiebel',1, 0.15, 50, 28, 4.9, 1.20);
+
+INSERT INTO Zutat (Zutat_ID, Zutatname, Mengeneinheit, Nettopreis, Bestand,  Kalorien, Kohlenhydrate, Protein) VALUES (1003, 'Tomate', 1, 0.45, 50, 18, 2.6, 1);
+
+INSERT INTO Zutat (Zutat_ID, Zutatname, Mengeneinheit, Nettopreis, Bestand,  Kalorien, Kohlenhydrate, Protein) VALUES (1004, 'Schalotte', 1, 0.20, 500, 25, 3.3, 1.5);
+
+INSERT INTO Zutat (Zutat_ID, Zutatname, Mengeneinheit, Nettopreis, Bestand,  Kalorien, Kohlenhydrate, Protein) VALUES (1005, 'Karotte', 1, 0.30, 500, 41, 10, 0.9);
+
+INSERT INTO Zutat (Zutat_ID, Zutatname, Mengeneinheit, Nettopreis, Bestand,  Kalorien, Kohlenhydrate, Protein) VALUES (1006, 'Kartoffel', 1, 0.15, 1500, 71, 14.6, 2);
+
+INSERT INTO Zutat (Zutat_ID, Zutatname, Mengeneinheit, Nettopreis, Bestand,  Kalorien, Kohlenhydrate, Protein) VALUES (1007, 'Rucola', 2, 0.90, 10, 27, 2.1, 2.6);
+
+INSERT INTO Zutat (Zutat_ID, Zutatname, Mengeneinheit, Nettopreis, Bestand,  Kalorien, Kohlenhydrate, Protein) VALUES (1008, 'Lauch', 1, 1.2, 35, 29, 3.3, 2.1);
+
+INSERT INTO Zutat (Zutat_ID, Zutatname, Mengeneinheit, Nettopreis, Bestand,  Kalorien, Kohlenhydrate, Protein) VALUES (1009, 'Knoblauch', 1, 0.25, 250, 141, 28.4, 6.1);
+
+INSERT INTO Zutat (Zutat_ID, Zutatname, Mengeneinheit, Nettopreis, Bestand,  Kalorien, Kohlenhydrate, Protein) VALUES (1010, 'Basilikum', 2, 1.3, 10, 41, 5.1, 3.1);
+
+INSERT INTO Zutat (Zutat_ID, Zutatname, Mengeneinheit, Nettopreis, Bestand,  Kalorien, Kohlenhydrate, Protein) VALUES (1011, 'Süßkartoffel', 1, 2.0, 200, 86, 20, 1.6);
+
+INSERT INTO Zutat (Zutat_ID, Zutatname, Mengeneinheit, Nettopreis, Bestand,  Kalorien, Kohlenhydrate, Protein) VALUES (1012, 'Schnittlauch', 2, 0.9, 10, 28, 1, 3);
+
+INSERT INTO Zutat (Zutat_ID, Zutatname, Mengeneinheit, Nettopreis, Bestand,  Kalorien, Kohlenhydrate, Protein) VALUES (2001, 'Apfel', 1, 1.2, 750, 54, 14.4, 0.3);
+
+INSERT INTO Zutat (Zutat_ID, Zutatname, Mengeneinheit, Nettopreis, Bestand,  Kalorien, Kohlenhydrate, Protein) VALUES (3001, 'Vollmilch. 3.5%', 3, 1.5, 50,  65, 4.7, 3.4);
+
+INSERT INTO Zutat (Zutat_ID, Zutatname, Mengeneinheit, Nettopreis, Bestand,  Kalorien, Kohlenhydrate, Protein) VALUES (3002, 'Mozzarella', 4, 3.5, 20,  241, 1, 18.1);
+
+INSERT INTO Zutat (Zutat_ID, Zutatname, Mengeneinheit, Nettopreis, Bestand,  Kalorien, Kohlenhydrate, Protein) VALUES (3003, 'Butter', 1, 3.0, 50,  741, 0.6, 0.7);
+
+INSERT INTO Zutat (Zutat_ID, Zutatname, Mengeneinheit, Nettopreis, Bestand,  Kalorien, Kohlenhydrate, Protein) VALUES (4001, 'Ei', 1, 0.4, 300, 137, 1.5, 11.9);
+
+INSERT INTO Zutat (Zutat_ID, Zutatname, Mengeneinheit, Nettopreis, Bestand,  Kalorien, Kohlenhydrate, Protein) VALUES (5001, 'Wiener Würstchen', 5, 1.8, 40,  331, 1.2, 9.9);
+
+INSERT INTO Zutat (Zutat_ID, Zutatname, Mengeneinheit, Nettopreis, Bestand,  Kalorien, Kohlenhydrate, Protein) VALUES (9001, 'Tofu-Würstchen', 1, 1.8, 20,  252, 7, 17);
+
+INSERT INTO Zutat (Zutat_ID, Zutatname, Mengeneinheit, Nettopreis, Bestand,  Kalorien, Kohlenhydrate, Protein) VALUES (6408, 'Couscous', 4, 1.9, 15, 351, 67, 12);
+
+INSERT INTO Zutat (Zutat_ID, Zutatname, Mengeneinheit, Nettopreis, Bestand,  Kalorien, Kohlenhydrate, Protein) VALUES (7043, 'Gemüsebrühe', 7, 0.2, 4000, 1, 0.5, 0.5);
+
+INSERT INTO Zutat (Zutat_ID, Zutatname, Mengeneinheit, Nettopreis, Bestand,  Kalorien, Kohlenhydrate, Protein) VALUES (6300, 'Kichererbsen', 6, 1.0, 400, 150, 21.2, 9);
+
+
