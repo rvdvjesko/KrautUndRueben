@@ -21,7 +21,6 @@ CREATE TABLE bestellung (
   Bestelldatum date,
   Rechnungsbetrag decimal(10,2),
   Kunde_ID int,
-  Zutat_ID int,
   PRIMARY KEY(Bestellung_ID)
 );
 
