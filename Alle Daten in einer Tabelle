@@ -8,6 +8,13 @@ INSERT INTO Mengeneinheit (Mengeneinheit_ID, Mengeneinheit) VALUES (5,'Paar');
 INSERT INTO Mengeneinheit (Mengeneinheit_ID, Mengeneinheit) VALUES (6,'Dose');
 INSERT INTO Mengeneinheit (Mengeneinheit_ID, Mengeneinheit) VALUES (7,'Würfel');
 
+-- Beschränkung
+INSERT INTO Beschränkung (Beschränkung_ID, Beschränkung) VALUES (1, 'Laktose');
+INSERT INTO Beschränkung (Beschränkung_ID, Beschränkung) VALUES (2, 'Gluten');
+INSERT INTO Beschränkung (Beschränkung_ID, Beschränkung) VALUES (3, 'Erdnuss');
+INSERT INTO Beschränkung (Beschränkung_ID, Beschränkung) VALUES (4, 'Ei');
+INSERT INTO Beschränkung (Beschränkung_ID, Beschränkung) VALUES (5, 'Tomaten');
+
 -- Ernährungskategorie
 INSERT INTO Ernährungskategorie values (1, 'Vegan');
 INSERT INTO Ernährungskategorie values (2, 'Vegetarisch');
