@@ -133,8 +133,7 @@ CREATE TABLE Rezept_enthält_Ernährungskategorie (
 /******************************************************************************/
 /***                              Foreign Keys                              ***/
 /******************************************************************************/
-ALTER TABLE Bestellung ADD FOREIGN KEY (Kunde_ID) REFERENCES Kunde(Kunde_ID);
-ALTER TABLE Bestellung ADD FOREIGN KEY (Zutat_ID) REFERENCES Zutat(Zutat_ID); 
+ALTER TABLE Bestellung ADD FOREIGN KEY (Kunde_ID) REFERENCES Kunde(Kunde_ID); 
 
 ALTER TABLE Bestellung_enthält_Zutat ADD FOREIGN KEY (Bestellung_ID) REFERENCES Bestellung(Bestellung_ID);
 ALTER TABLE Bestellung_enthält_Zutat ADD FOREIGN KEY (Zutat_ID) REFERENCES Zutat(Zutat_ID);
