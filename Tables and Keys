@@ -139,7 +139,6 @@ ALTER TABLE Bestellung ADD FOREIGN KEY (Zutat_ID) REFERENCES Zutat(Zutat_ID);
 ALTER TABLE Bestellung_enthält_Zutat ADD FOREIGN KEY (Bestellung_ID) REFERENCES Bestellung(Bestellung_ID);
 ALTER TABLE Bestellung_enthält_Zutat ADD FOREIGN KEY (Zutat_ID) REFERENCES Zutat(Zutat_ID);
 
-ALTER TABLE Zutat ADD FOREIGN KEY (Nährstoffangabe_ID) REFERENCES Nährstoffangabe(Nährstoff_ID);
 ALTER TABLE Zutat ADD FOREIGN KEY (Mengeneinheit) REFERENCES Mengeneinheit(Mengeneinheit_ID);
 
 ALTER TABLE Lieferant_liefert_Zutat ADD FOREIGN KEY (Lieferant_ID) REFERENCES Lieferant(Lieferant_ID);
@@ -147,8 +146,6 @@ ALTER TABLE Lieferant_liefert_Zutat ADD FOREIGN KEY (Zutat_ID) REFERENCES Zutat(
 
 ALTER TABLE Rezept_enthält_Zutat ADD FOREIGN KEY (Rezept_ID) REFERENCES Rezept(Rezept_ID);
 ALTER TABLE Rezept_enthält_Zutat ADD FOREIGN KEY (Zutat_ID) REFERENCES Zutat(Zutat_ID);
-
-ALTER TABLE Rezept ADD FOREIGN KEY (Nährstoffangabe_ID) REFERENCES Nährstoffangabe(Nährstoff_ID);
 
 ALTER TABLE Zutat_enthält_Ernährungskategorie ADD FOREIGN KEY (Zutat_ID) REFERENCES Zutat(Zutat_ID);
 ALTER TABLE Zutat_enthält_Ernährungskategorie ADD FOREIGN KEY (Ernährungskategorie_ID) REFERENCES Ernährungskategorie(Ernährungskategorie_ID);
