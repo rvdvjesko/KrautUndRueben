@@ -1,5 +1,5 @@
 
-
+-- Mengeneinheit
 INSERT INTO Mengeneinheit (Mengeneinheit_ID, Mengeneinheit) VALUES (1,'Stück');
 INSERT INTO Mengeneinheit (Mengeneinheit_ID, Mengeneinheit) VALUES (2,'Bund');
 INSERT INTO Mengeneinheit (Mengeneinheit_ID, Mengeneinheit) VALUES (3,'Liter');
@@ -8,7 +8,14 @@ INSERT INTO Mengeneinheit (Mengeneinheit_ID, Mengeneinheit) VALUES (5,'Paar');
 INSERT INTO Mengeneinheit (Mengeneinheit_ID, Mengeneinheit) VALUES (6,'Dose');
 INSERT INTO Mengeneinheit (Mengeneinheit_ID, Mengeneinheit) VALUES (7,'Würfel');
 
+-- Ernährungskategorie
+INSERT INTO Ernährungskategorie values (1, 'Vegan');
+INSERT INTO Ernährungskategorie values (2, 'Vegetarisch');
+INSERT INTO Ernährungskategorie values (3, 'Frutarisch');
+INSERT INTO Ernährungskategorie values (4, 'Low Carb');
+INSERT INTO Ernährungskategorie values (5, 'High Protein');
 
+-- Zutat
 INSERT INTO Zutat (Zutat_ID, Zutatname, Mengeneinheit, Nettopreis, Bestand,  Kalorien, Kohlenhydrate, Protein) VALUES (1001,'Zucchini',1, 0.89, 100, 19,2,1.6);
 INSERT INTO Zutat (Zutat_ID, Zutatname, Mengeneinheit, Nettopreis, Bestand,  Kalorien, Kohlenhydrate, Protein) VALUES (1002,'Zwiebel',1, 0.15, 50, 28, 4.9, 1.20);
 INSERT INTO Zutat (Zutat_ID, Zutatname, Mengeneinheit, Nettopreis, Bestand,  Kalorien, Kohlenhydrate, Protein) VALUES (1003, 'Tomate', 1, 0.45, 50, 18, 2.6, 1);
