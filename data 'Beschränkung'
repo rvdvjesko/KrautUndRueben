@@ -1,0 +1,5 @@
+INSERT INTO Beschränkung (Beschränkung_ID, Beschränkung) VALUES (1, 'Laktose');
+INSERT INTO Beschränkung (Beschränkung_ID, Beschränkung) VALUES (2, 'Gluten');
+INSERT INTO Beschränkung (Beschränkung_ID, Beschränkung) VALUES (3, 'Erdnuss');
+INSERT INTO Beschränkung (Beschränkung_ID, Beschränkung) VALUES (4, 'Ei');
+INSERT INTO Beschränkung (Beschränkung_ID, Beschränkung) VALUES (5, 'Tomaten');
