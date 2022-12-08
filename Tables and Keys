@@ -84,17 +84,17 @@ CREATE TABLE Mengeneinheit (
 );
 
 -- CREATE TABLE Nährstoffangabe (
-	Nährstoff_ID int AUTO_INCREMENT NOT NULL,
-	Kalorien decimal(5,2),
-	Natrium decimal(5,2),
-	Ballaststoffe decimal(5,2),
-	Protein decimal(5,2),
-	Kohlenhydrate decimal(5,2),
-	davon_Zucker decimal(5,2),
-	Fett decimal(5,2),
-	gesättigte_Fettsäuren decimal(5,2),
-	PRIMARY KEY (Nährstoff_ID)
-);
+-- Nährstoff_ID int AUTO_INCREMENT NOT NULL,
+-- 	Kalorien decimal(5,2),
+-- 	Natrium decimal(5,2),
+-- 	Ballaststoffe decimal(5,2),
+-- 	Protein decimal(5,2),
+-- 	Kohlenhydrate decimal(5,2),
+-- 	davon_Zucker decimal(5,2),
+-- 	Fett decimal(5,2),
+-- 	gesättigte_Fettsäuren decimal(5,2),
+-- 	PRIMARY KEY (Nährstoff_ID)
+-- );
 
 CREATE TABLE Zutat_enthält_Ernährungskategorie (
 	Zutat_ID int,
