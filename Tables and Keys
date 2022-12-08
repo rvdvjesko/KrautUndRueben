@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS krautundruebenDemo;
-CREATE DATABASE IF NOT EXISTS krautundruebenDemo;
-USE krautundruebenDemo;
+DROP DATABASE IF EXISTS KrautUndRueben;
+CREATE DATABASE IF NOT EXISTS KrautUndRueben;
+USE KrautUndRueben;
 
 CREATE TABLE Kunde (
   Kunde_ID int AUTO_INCREMENT NOT NULL,
