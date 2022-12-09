@@ -1,4 +1,3 @@
-
 -- Mengeneinheit
 INSERT INTO Mengeneinheit (Mengeneinheit_ID, Mengeneinheit) VALUES (1,'Stück');
 INSERT INTO Mengeneinheit (Mengeneinheit_ID, Mengeneinheit) VALUES (2,'Bund');
@@ -88,6 +87,7 @@ INSERT INTO Bestellung (Bestelldatum, Rechnungsbetrag, Kunde_ID) VALUES ('2020-0
 INSERT INTO Bestellung (Bestelldatum, Rechnungsbetrag, Kunde_ID) VALUES ('2020-08-12', 8.67, 2005);
 INSERT INTO Bestellung (Bestelldatum, Rechnungsbetrag, Kunde_ID) VALUES ('2020-08-13', 20.87, 2003);
 
+
 -- Bestellung_enthält_Zutat
 INSERT INTO Bestellung_enthält_Zutat(Bestellung_ID, Zutat_ID, Menge) VALUES (1, 1001, 5);
 INSERT INTO Bestellung_enthält_Zutat(Bestellung_ID, Zutat_ID, Menge) VALUES (1, 1002, 3);
@@ -96,8 +96,8 @@ INSERT INTO Bestellung_enthält_Zutat(Bestellung_ID, Zutat_ID, Menge) VALUES (1,
 INSERT INTO Bestellung_enthält_Zutat(Bestellung_ID, Zutat_ID, Menge) VALUES (2, 9001, 10);
 INSERT INTO Bestellung_enthält_Zutat(Bestellung_ID, Zutat_ID, Menge) VALUES (2, 1005, 5);
 INSERT INTO Bestellung_enthält_Zutat(Bestellung_ID, Zutat_ID, Menge) VALUES (2, 1003, 4);
-INSERT INTO Bestellung_enthält_Zutat(Bestellung_ID, Zutat_ID, Menge) VALUES (2, 6408, 5);
-INSERT INTO Bestellung_enthält_Zutat(Bestellung_ID, Zutat_ID, Menge) VALUES (3, 6300, 15);
+INSERT INTO Bestellung_enthält_Zutat(Bestellung_ID, Zutat_ID, Menge) VALUES (2, 6001, 5);
+INSERT INTO Bestellung_enthält_Zutat(Bestellung_ID, Zutat_ID, Menge) VALUES (3, 6002, 15);
 INSERT INTO Bestellung_enthält_Zutat(Bestellung_ID, Zutat_ID, Menge) VALUES (3, 3001, 5);
 INSERT INTO Bestellung_enthält_Zutat(Bestellung_ID, Zutat_ID, Menge) VALUES (4, 5001, 7);
 INSERT INTO Bestellung_enthält_Zutat(Bestellung_ID, Zutat_ID, Menge) VALUES (4, 3003, 2);
@@ -142,8 +142,8 @@ INSERT INTO Lieferant_liefert_Zutat VALUES(103, 1015, 23);
 INSERT INTO Lieferant_liefert_Zutat VALUES(103, 2001, 17);
 INSERT INTO Lieferant_liefert_Zutat VALUES(103, 3001, 20);
 INSERT INTO Lieferant_liefert_Zutat VALUES(103, 6003, 120);
-INSERT INTO Lieferant_liefert_Zutat VALUES(103, 6300, 14);
-INSERT INTO Lieferant_liefert_Zutat VALUES(103, 6408, 23);
+INSERT INTO Lieferant_liefert_Zutat VALUES(103, 6002, 14);
+INSERT INTO Lieferant_liefert_Zutat VALUES(103, 6001, 23);
 INSERT INTO Lieferant_liefert_Zutat VALUES(103, 7043, 17);
 INSERT INTO Lieferant_liefert_Zutat VALUES(103, 9001, 20);
 
@@ -226,11 +226,11 @@ INSERT INTO Zutat_enthält_Ernährungskategorie values (4001, 2);
 INSERT INTO Zutat_enthält_Ernährungskategorie values (6003, 1);
 INSERT INTO Zutat_enthält_Ernährungskategorie values (6003, 2);
 
-INSERT INTO Zutat_enthält_Ernährungskategorie values (6300, 1);
-INSERT INTO Zutat_enthält_Ernährungskategorie values (6300, 2);
+INSERT INTO Zutat_enthält_Ernährungskategorie values (6002, 1);
+INSERT INTO Zutat_enthält_Ernährungskategorie values (6002, 2);
 
-INSERT INTO Zutat_enthält_Ernährungskategorie values (6408, 1);
-INSERT INTO Zutat_enthält_Ernährungskategorie values (6408, 2);
+INSERT INTO Zutat_enthält_Ernährungskategorie values (6001, 1);
+INSERT INTO Zutat_enthält_Ernährungskategorie values (6001, 2);
 
 INSERT INTO Zutat_enthält_Ernährungskategorie values (7043, 1);
 INSERT INTO Zutat_enthält_Ernährungskategorie values (7043, 2);
