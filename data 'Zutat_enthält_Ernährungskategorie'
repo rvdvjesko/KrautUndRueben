@@ -34,13 +34,31 @@ INSERT INTO Zutat_enthält_Ernährungskategorie values (1011, 2);
 INSERT INTO Zutat_enthält_Ernährungskategorie values (1012, 1);
 INSERT INTO Zutat_enthält_Ernährungskategorie values (1012, 2);
 
+INSERT INTO Zutat_enthält_Ernährungskategorie values (1013, 1);
+INSERT INTO Zutat_enthält_Ernährungskategorie values (1013, 2);
+
+INSERT INTO Zutat_enthält_Ernährungskategorie values (1014, 1);
+INSERT INTO Zutat_enthält_Ernährungskategorie values (1014, 2);
+
+INSERT INTO Zutat_enthält_Ernährungskategorie values (1015, 1);
+INSERT INTO Zutat_enthält_Ernährungskategorie values (1015, 2);
+
 INSERT INTO Zutat_enthält_Ernährungskategorie values (2001, 1);
 INSERT INTO Zutat_enthält_Ernährungskategorie values (2001, 2);
 
 INSERT INTO Zutat_enthält_Ernährungskategorie values (3001, 2);
+
 INSERT INTO Zutat_enthält_Ernährungskategorie values (3002, 2);
+
 INSERT INTO Zutat_enthält_Ernährungskategorie values (3003, 2);
+
+INSERT INTO Zutat_enthält_Ernährungskategorie values (3004, 1);
+INSERT INTO Zutat_enthält_Ernährungskategorie values (3004, 2);
+
 INSERT INTO Zutat_enthält_Ernährungskategorie values (4001, 2);
+
+INSERT INTO Zutat_enthält_Ernährungskategorie values (6003, 1);
+INSERT INTO Zutat_enthält_Ernährungskategorie values (6003, 2);
 
 INSERT INTO Zutat_enthält_Ernährungskategorie values (6300, 1);
 INSERT INTO Zutat_enthält_Ernährungskategorie values (6300, 2);
