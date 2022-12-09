@@ -129,7 +129,7 @@ CREATE TABLE Rezept_enthält_Ernährungskategorie (
 CREATE TABLE Rezept_enthält_Beschränkung (
 	Rezept_ID int,
 	Beschränkung_ID int,
-	PRIMARY KEY (Rezept_ID, Bechränkung_ID)
+	PRIMARY KEY (Rezept_ID, Beschränkung_ID)
 );
 
 
@@ -160,4 +160,4 @@ ALTER TABLE Rezept_enthält_Ernährungskategorie ADD FOREIGN KEY (Rezept_ID) REF
 ALTER TABLE Rezept_enthält_Ernährungskategorie ADD FOREIGN KEY (Ernährungskategorie_ID) REFERENCES Ernährungskategorie (Ernährungskategorie_ID);
 
 ALTER TABLE Rezept_enthält_Beschränkung ADD FOREIGN KEY (Rezept_ID) REFERENCES Rezept(Rezept_ID);
-ALTER TABLE Rezept_enthält_Beschränkung ADD FOREIGN KEY (Bechränkung_ID) REFERENCES Beschränkung(Beschränkung_ID);
+ALTER TABLE Rezept_enthält_Beschränkung ADD FOREIGN KEY (Beschränkung_ID) REFERENCES Beschränkung(Beschränkung_ID);
