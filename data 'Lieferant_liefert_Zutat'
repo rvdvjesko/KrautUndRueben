@@ -1,0 +1,29 @@
+INSERT INTO Lieferant_liefert_Zutat VALUES(101, 1001, 90);
+INSERT INTO Lieferant_liefert_Zutat VALUES(101, 1002, 20);
+INSERT INTO Lieferant_liefert_Zutat VALUES(101, 1003, 33);
+INSERT INTO Lieferant_liefert_Zutat VALUES(101, 1004, 120);
+INSERT INTO Lieferant_liefert_Zutat VALUES(101, 1005, 22);
+INSERT INTO Lieferant_liefert_Zutat VALUES(101, 1006, 45);
+INSERT INTO Lieferant_liefert_Zutat VALUES(101, 1007, 230);
+INSERT INTO Lieferant_liefert_Zutat VALUES(101, 3002, 70);
+INSERT INTO Lieferant_liefert_Zutat VALUES(101, 3003, 10);
+INSERT INTO Lieferant_liefert_Zutat VALUES(101, 3004, 87);
+
+INSERT INTO Lieferant_liefert_Zutat VALUES(102, 1008, 15);
+INSERT INTO Lieferant_liefert_Zutat VALUES(102, 1009, 10);
+INSERT INTO Lieferant_liefert_Zutat VALUES(102, 1010, 17);
+INSERT INTO Lieferant_liefert_Zutat VALUES(102, 1011, 120);
+INSERT INTO Lieferant_liefert_Zutat VALUES(102, 1012, 30);
+INSERT INTO Lieferant_liefert_Zutat VALUES(102, 4001, 130);
+INSERT INTO Lieferant_liefert_Zutat VALUES(102, 5001, 10);
+
+INSERT INTO Lieferant_liefert_Zutat VALUES(103, 1013, 120);
+INSERT INTO Lieferant_liefert_Zutat VALUES(103, 1014, 14);
+INSERT INTO Lieferant_liefert_Zutat VALUES(103, 1015, 23);
+INSERT INTO Lieferant_liefert_Zutat VALUES(103, 2001, 17);
+INSERT INTO Lieferant_liefert_Zutat VALUES(103, 3001, 20);
+INSERT INTO Lieferant_liefert_Zutat VALUES(103, 6003, 120);
+INSERT INTO Lieferant_liefert_Zutat VALUES(103, 6300, 14);
+INSERT INTO Lieferant_liefert_Zutat VALUES(103, 6408, 23);
+INSERT INTO Lieferant_liefert_Zutat VALUES(103, 7043, 17);
+INSERT INTO Lieferant_liefert_Zutat VALUES(103, 9001, 20);
