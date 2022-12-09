@@ -128,7 +128,7 @@ CREATE TABLE Rezept_enthält_Ernährungskategorie (
 
 CREATE TABLE Rezept_enthält_Beschränkung (
 	Rezept_ID int,
-	Bechränkung_ID int,
+	Beschränkung_ID int,
 	PRIMARY KEY (Rezept_ID, Bechränkung_ID)
 );
 
