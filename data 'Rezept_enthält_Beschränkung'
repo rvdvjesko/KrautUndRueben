@@ -1,3 +1,0 @@
-INSERT INTO Rezept_enthält_Beschränkung(Rezept_ID, Beschränkung_ID) VALUES(2, 5);
-INSERT INTO Rezept_enthält_Beschränkung(Rezept_ID, Beschränkung_ID) VALUES(4, 2);
-INSERT INTO Rezept_enthält_Beschränkung(Rezept_ID, Beschränkung_ID) VALUES(4, 5);
