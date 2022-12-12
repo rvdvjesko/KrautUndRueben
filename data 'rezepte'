@@ -1,4 +1,0 @@
-INSERT INTO Rezept values (1, 'Kartoffelsuppe');
-INSERT INTO Rezept values (2, 'Tomatensuppe');
-INSERT INTO Rezept values (3, 'Salat');
-INSERT INTO Rezept values (4, 'Tomatensauce à la Miracoli');
