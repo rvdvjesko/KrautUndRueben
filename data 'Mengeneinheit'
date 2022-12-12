@@ -1,7 +1,0 @@
-INSERT INTO Mengeneinheit (Mengeneinheit_ID, Mengeneinheit) VALUES (1,'Stück');
-INSERT INTO Mengeneinheit (Mengeneinheit_ID, Mengeneinheit) VALUES (2,'Bund');
-INSERT INTO Mengeneinheit (Mengeneinheit_ID, Mengeneinheit) VALUES (3,'Liter');
-INSERT INTO Mengeneinheit (Mengeneinheit_ID, Mengeneinheit) VALUES (4,'Packung');
-INSERT INTO Mengeneinheit (Mengeneinheit_ID, Mengeneinheit) VALUES (5,'Paar');
-INSERT INTO Mengeneinheit (Mengeneinheit_ID, Mengeneinheit) VALUES (6,'Dose');
-INSERT INTO Mengeneinheit (Mengeneinheit_ID, Mengeneinheit) VALUES (7,'Würfel');
