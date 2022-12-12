@@ -1,0 +1,6 @@
+INSERT INTO Zutat_enthält_Beschränkung (Zutat_ID, Beschränkung_ID) VALUES (1003, 5);
+INSERT INTO Zutat_enthält_Beschränkung (Zutat_ID, Beschränkung_ID) VALUES (3001, 1);
+INSERT INTO Zutat_enthält_Beschränkung (Zutat_ID, Beschränkung_ID) VALUES (3002, 1);
+INSERT INTO Zutat_enthält_Beschränkung (Zutat_ID, Beschränkung_ID) VALUES (3003, 1);
+INSERT INTO Zutat_enthält_Beschränkung (Zutat_ID, Beschränkung_ID) VALUES (4001, 4);
+INSERT INTO Zutat_enthält_Beschränkung (Zutat_ID, Beschränkung_ID) VALUES (5001, 2);

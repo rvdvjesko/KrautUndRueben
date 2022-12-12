@@ -1,0 +1,9 @@
+INSERT INTO KUNDE (Kunde_ID, Vorname, Nachname, GEBURTSDATUM, Straße, Hausnummer, Postleitzahl, Ort, email) VALUES (2001, 'Wellensteyn','Kira','1990-05-05','Eppendorfer LandStraße', '104', '20249','Hamburg','k.wellensteyn@yahoo.de');
+INSERT INTO KUNDE (Kunde_ID, Vorname, Nachname, GEBURTSDATUM, Straße, Hausnummer, Postleitzahl, Ort, email) VALUES (2002, 'Foede','Dorothea','2000-03-24','Ohmstraße', '23', '22765','Hamburg','d.foede@web.de');
+INSERT INTO KUNDE (Kunde_ID, Vorname, Nachname, GEBURTSDATUM, Straße, Hausnummer, Postleitzahl, Ort, email) VALUES (2003, 'Leberer','Sigrid','1989-09-21','Bilser Berg', '6', '20459','Hamburg','sigrid@leberer.de');
+INSERT INTO KUNDE (Kunde_ID, Vorname, Nachname, GEBURTSDATUM, Straße, Hausnummer, Postleitzahl, Ort, email) VALUES (2004, 'Soerensen','Hanna','1974-04-03','Alter Teichweg', '95', '22049','Hamburg','h.soerensen@yahoo.de');
+INSERT INTO KUNDE (Kunde_ID, Vorname, Nachname, GEBURTSDATUM, Straße, Hausnummer, Postleitzahl, Ort, email) VALUES (2005, 'Schnitter','Marten','1964-04-17','Stübels', '10', '22835','Barsbüttel','schni_mart@gmail.com');
+INSERT INTO KUNDE (Kunde_ID, Vorname, Nachname, GEBURTSDATUM, Straße, Hausnummer, Postleitzahl, Ort, email) VALUES (2006, 'Maurer','Belinda','1978-09-09','Grotelertwiete', '4a', '21075','Hamburg','belinda1978@yahoo.de');
+INSERT INTO KUNDE (Kunde_ID, Vorname, Nachname, GEBURTSDATUM, Straße, Hausnummer, Postleitzahl, Ort, email) VALUES (2007, 'Gessert','Armin','1978-01-29','Küstersweg', '3', '21079','Hamburg','armin@gessert.de');
+INSERT INTO KUNDE (Kunde_ID, Vorname, Nachname, GEBURTSDATUM, Straße, Hausnummer, Postleitzahl, Ort, email) VALUES (2008, 'Haessig','Jean-Marc','1982-08-30','Neugrabener Bahnhofstraße', '30', '21149','Hamburg','jm@haessig.de');
+INSERT INTO KUNDE (Kunde_ID, Vorname, Nachname, GEBURTSDATUM, Straße, Hausnummer, Postleitzahl, Ort, email) VALUES (2009, 'Urocki','Eric','1999-12-04','Elbchaussee', '228', '22605','Hamburg','urocki@outlook.de');
