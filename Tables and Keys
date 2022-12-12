@@ -147,7 +147,7 @@ ALTER TABLE zutat ADD FOREIGN KEY (mengeneinheit) REFERENCES mengeneinheit(menge
 ALTER TABLE lieferant_liefert_zutat ADD FOREIGN KEY (lieferant_id) REFERENCES lieferant(lieferant_id);
 ALTER TABLE lieferant_liefert_zutat ADD FOREIGN KEY (zutat_id) REFERENCES zutat(zutat_id);
 
-ALTER TABLE rezept_enthält_zutat ADD FOREIGN KEY (rezept_id) REFERENCES rezept(tezept_id);
+ALTER TABLE rezept_enthält_zutat ADD FOREIGN KEY (rezept_id) REFERENCES rezept(rezept_id);
 ALTER TABLE rezept_enthält_zutat ADD FOREIGN KEY (zutat_id) REFERENCES zutat(zutat_id);
 
 ALTER TABLE zutat_enthält_ernährungskategorie ADD FOREIGN KEY (zutat_id) REFERENCES zutat(zutat_id);
