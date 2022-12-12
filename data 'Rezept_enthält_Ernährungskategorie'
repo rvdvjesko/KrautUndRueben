@@ -1,8 +1,0 @@
-INSERT INTO Rezept_enthält_Ernährungskategorie(Rezept_ID, Ernährungskategorie_ID) VALUES(1, 1);
-INSERT INTO Rezept_enthält_Ernährungskategorie(Rezept_ID, Ernährungskategorie_ID) VALUES(1, 2);
-INSERT INTO Rezept_enthält_Ernährungskategorie(Rezept_ID, Ernährungskategorie_ID) VALUES(2, 1);
-INSERT INTO Rezept_enthält_Ernährungskategorie(Rezept_ID, Ernährungskategorie_ID) VALUES(2, 2);
-INSERT INTO Rezept_enthält_Ernährungskategorie(Rezept_ID, Ernährungskategorie_ID) VALUES(3, 1);
-INSERT INTO Rezept_enthält_Ernährungskategorie(Rezept_ID, Ernährungskategorie_ID) VALUES(3, 2);
-INSERT INTO Rezept_enthält_Ernährungskategorie(Rezept_ID, Ernährungskategorie_ID) VALUES(4, 1);
-INSERT INTO Rezept_enthält_Ernährungskategorie(Rezept_ID, Ernährungskategorie_ID) VALUES(4, 2);
