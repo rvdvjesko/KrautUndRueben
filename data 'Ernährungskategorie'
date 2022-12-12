@@ -1,5 +1,0 @@
-INSERT INTO Ernährungskategorie values (1, 'Vegan');
-INSERT INTO Ernährungskategorie values (2, 'Vegetarisch');
-INSERT INTO Ernährungskategorie values (3, 'Frutarisch');
-INSERT INTO Ernährungskategorie values (4, 'Low Carb');
-INSERT INTO Ernährungskategorie values (5, 'High Protein');
