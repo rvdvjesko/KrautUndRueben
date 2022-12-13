@@ -2,16 +2,18 @@
  
  -- 1. Anhand der Kunden ID alle Bestellungen mit aufgelisteten Zutaten abrufen
  
- DELIMITER $$
+DELIMITER $$
 
 CREATE PROCEDURE Bestellung_Liste(IN kundeID int)
 BEGIN
-	SELECT b.bestellung_id, b.bestelldatum, b.rechnungsbetrag, z.zutatname
+	SELECT b.bestellung_id, b.bestelldatum, k.vorname, k.nachname, b.rechnungsbetrag, z.zutatname
 	from bestellung b 
 	join bestellung_enthält_zutat bez 
 	on bez.bestellung_id = b.bestellung_id 
 	join zutat z 
 	on z.zutat_id = bez.zutat_id
+	join kunde k 
+	on k.kunde_id = b.kunde_id 
 	where b.kunde_id = kundeID;
 END;
 $$
