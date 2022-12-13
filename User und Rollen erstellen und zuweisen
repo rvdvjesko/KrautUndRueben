@@ -1,3 +1,4 @@
+use krautundrueben
 CREATE ROLE IF NOT EXISTS read_edit_zutat_rezept;
 
 GRANT SELECT, INSERT, DELETE ON krautundrueben.zutat
