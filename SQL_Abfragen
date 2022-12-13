@@ -134,3 +134,10 @@ inner join (
 ) second_table
 on first_table.Rezept_ID = second_table.Rezept_ID
 where first_table.Ernährungskategorie = "vegan";
+
+-- Auswahl aller Zutaten nach Mengeneinheit
+
+select z.zutatname, m.mengeneinheit 
+from zutat z
+join mengeneinheit m
+where m.mengeneinheit like 'Stück';
