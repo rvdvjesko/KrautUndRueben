@@ -1,0 +1,30 @@
+-- Wenn Preis einer Zutat geändert wird, Logeintrag erstellen
+
+create table preisentwicklung_zutat (
+	zutatname varchar(25),
+	preis_vorher decimal(5,2),
+	preis_nachher decimal(5,2),
+	Datum timestamp
+);
+
+
+
+DELIMITER $$ 
+
+CREATE 
+	TRIGGER preisentwicklung_zutaten AFTER UPDATE 
+	ON zutat
+	FOR EACH ROW BEGIN 
+		INSERT INTO preisentwicklung_zutat (zutatname, preis_vorher, preis_nachher, Datum) VALUES(Old.zutatname, OLD.nettopreis, NEW.nettopreis, NOW());
+	END$$
+
+DELIMITER ;
+
+-- Beispiel eines Updates
+
+UPDATE Zutat
+SET nettopreis = 0.19
+WHERE zutat_id = 1002;
+
+
+select * from preisentwicklung_zutat;
