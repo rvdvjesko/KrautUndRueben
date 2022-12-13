@@ -49,6 +49,24 @@ call delete_kunde(2001);
 
 
 
+ -- 3. Auskunft eines Kunden
+
+ DELIMITER $$
+
+CREATE PROCEDURE auskunft_kunde(IN id int)
+BEGIN
+	select * from Kunde k
+	where k.kunde_id = id;
+END;
+$$
+
+DELIMITER ;
+
+drop PROCEDURE auskunft_kunde;
+
+
+call auskunft_kunde(2009);
+
 
 
 -- ------------------------------------- Trigger -------------------------------------
