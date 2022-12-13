@@ -106,7 +106,7 @@ group by Kunde_ID;
 
 select r.Rezeptname, count(rez.Zutat_ID) as Zutat_count
 from Rezept r
-inner join Rezept_enthält_Zutat rez
+right join Rezept_enthält_Zutat rez
 on r.Rezept_ID = rez.Rezept_ID
 group by r.Rezeptname
 having Zutat_count < 5;
