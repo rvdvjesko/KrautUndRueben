@@ -22,6 +22,29 @@ DELIMITER ;
 call Bestellung_Liste(2002);
 
 
+ -- 2. Persönliche Daten eines Kunden löschehn
+
+DELIMITER //
+create procedure delete_kunde (in id int)
+ begin
+  update Kunde
+        set Kunde.Vorname = null,
+        Kunde.Nachname = null,
+        Kunde.Geburtsdatum = null,
+        Kunde.Straße = null,
+        Kunde.Hausnummer = null,
+        Kunde.Ort = null,
+        Kunde.Telefon = null,
+        Kunde.email = null,
+        Kunde.Vorname = null
+        where Kunde.Kunde_ID = id;
+
+ end;
+//
+
+DELIMITER ;
+
+call delete_kunde(2001);
 
 
 
@@ -56,3 +79,19 @@ SET nettopreis = 0.19
 WHERE zutat_id = 1002;
 
 select * from preisentwicklung_zutat;
+
+
+
+-- ------------------------------------- View -------------------------------------
+
+-- Welche Zutat wird aktuell von welchem Lieferant geliefert
+
+CREATE OR REPLACE VIEW zutat_lieferant AS
+select z.Zutatname, l.Lieferantenname
+from Zutat z
+join lieferant_liefert_zutat llz
+on  z.Zutat_ID = llz.Zutat_ID
+join lieferant l
+on llz.Lieferant_ID = l.Lieferant_ID;
+
+select * from zutat_lieferant;
