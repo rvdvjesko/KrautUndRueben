@@ -135,9 +135,23 @@ inner join (
 on first_table.Rezept_ID = second_table.Rezept_ID
 where first_table.Ernährungskategorie = "vegan";
 
+-- -------------------  eigene Abfragen ----------------
+
 -- Auswahl aller Zutaten nach Mengeneinheit
 
 select z.zutatname, m.mengeneinheit 
 from zutat z
 join mengeneinheit m
 where m.mengeneinheit like 'Stück';
+
+-- Auswahl aller Kunden, die Bestellungen mit einer bestimmten Zutat haben
+
+select k.vorname, k.nachname
+from Kunde k 
+join bestellung b 
+on b.kunde_id  = k.kunde_id
+join bestellung_enthält_zutat bez 
+on bez.bestellung_id = b.bestellung_id 
+join zutat z 
+on z.zutat_id = bez.zutat_id 
+where z.zutatname like 'Tomate'; -- oder z.zutat_id 
