@@ -154,4 +154,5 @@ join bestellung_enthält_zutat bez
 on bez.bestellung_id = b.bestellung_id 
 join zutat z 
 on z.zutat_id = bez.zutat_id 
-where z.zutatname like 'Tomate'; -- oder z.zutat_id 
+where z.zutatname like 'Tomate'
+order by k.nachname desc; 
