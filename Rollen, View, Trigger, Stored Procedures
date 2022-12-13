@@ -64,12 +64,14 @@ create table preisentwicklung_zutat (
 
 DELIMITER $$ 
 
-CREATE 
-	TRIGGER preisentwicklung_zutaten AFTER UPDATE 
-	ON zutat
-	FOR EACH ROW BEGIN 
-		INSERT INTO preisentwicklung_zutat (zutatname, preis_vorher, preis_nachher, Datum) VALUES(Old.zutatname, OLD.nettopreis, NEW.nettopreis, NOW());
-	END$$
+CREATE TRIGGER preisentwicklung_zutaten AFTER UPDATE 
+	ON zutat 
+	FOR EACH ROW 
+	BEGIN 
+	IF (new.nettopreis <> old.nettopreis) THEN
+	INSERT INTO preisentwicklung_zutat (zutatname, preis_vorher, preis_nachher, Datum) VALUES (OLD.zutatname, OLD.nettopreis, NEW.nettopreis, NOW());
+	END IF;
+	END; $$
 
 DELIMITER ;
 
