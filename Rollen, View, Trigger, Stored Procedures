@@ -1,0 +1,22 @@
+ -- Stores Prodedures
+ 
+ -- 1. Anhand der Kunden ID alle Bestellungen mit aufgelisteten Zutaten abrufen
+ 
+ DELIMITER $$
+
+CREATE PROCEDURE Bestellung_Liste(IN kundeID int)
+BEGIN
+	SELECT b.bestellung_id, b.bestelldatum, b.rechnungsbetrag, z.zutatname
+	from bestellung b 
+	join bestellung_enthält_zutat bez 
+	on bez.bestellung_id = b.bestellung_id 
+	join zutat z 
+	on z.zutat_id = bez.zutat_id
+	where b.kunde_id = kundeID;
+END;
+$$
+
+DELIMITER ;
+
+
+call Bestellung_Liste(2002);
