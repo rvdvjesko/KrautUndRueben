@@ -1,4 +1,4 @@
- -- Stores Prodedures
+ -- ------------------------------------- Stores Prodedures -------------------------------------
  
  -- 1. Anhand der Kunden ID alle Bestellungen mit aufgelisteten Zutaten abrufen
  
@@ -22,7 +22,12 @@ DELIMITER ;
 call Bestellung_Liste(2002);
 
 
--- Triggers
+
+
+
+
+
+-- ------------------------------------- Trigger -------------------------------------
 
 -- 1. Wenn Preis einer Zutat geändert wird, Logeintrag erstellen
 
@@ -44,7 +49,7 @@ CREATE
 
 DELIMITER ;
 
- -- ---- Beispiel eines Updates ---------
+ -- ---- Beispiel eines Updates ---
 
 UPDATE Zutat
 SET nettopreis = 0.19
