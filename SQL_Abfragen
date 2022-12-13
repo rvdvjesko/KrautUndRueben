@@ -156,3 +156,8 @@ join zutat z
 on z.zutat_id = bez.zutat_id 
 where z.zutatname like 'Tomate'
 order by k.nachname desc; 
+
+-- Durchschnittlicher Rechnungsbetrag
+
+select avg(b.rechnungsbetrag)
+from bestellung b ;
