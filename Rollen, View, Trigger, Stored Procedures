@@ -33,6 +33,7 @@ create procedure delete_kunde (in id int)
         Kunde.Geburtsdatum = null,
         Kunde.Straße = null,
         Kunde.Hausnummer = null,
+	Kunde.Postleitzahl = null,
         Kunde.Ort = null,
         Kunde.Telefon = null,
         Kunde.email = null,
