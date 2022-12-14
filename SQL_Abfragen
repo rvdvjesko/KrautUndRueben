@@ -170,9 +170,9 @@ join lieferant_liefert_zutat llz
 on llz.lieferant_id = l.lieferant_id 
 left join zutat z 
 on z.zutat_id = llz.zutat_id 
-right join rezept_enthält_zutat rez 
+left join rezept_enthält_zutat rez 
 on rez.zutat_id = z.zutat_id
-left join rezept r 
+join rezept r 
 on r.rezept_id = rez.rezept_id;
 
 -- Auswahl aller Zutaten, welche keine Beschränkungen haben.
