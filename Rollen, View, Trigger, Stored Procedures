@@ -86,7 +86,7 @@ call Bestellung_Liste(2002);
 
 
 
- -- 2. Persönliche Daten eines Kunden löschehn
+ -- 2. Persönliche Daten eines Kunden löschen
 
 DELIMITER //
 create procedure delete_kunde (in id int)
