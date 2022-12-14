@@ -21,7 +21,7 @@ INSERT INTO ernährungskategorie values (3, 'Frutarisch');
 INSERT INTO ernährungskategorie values (4, 'Low Carb');
 INSERT INTO ernährungskategorie values (5, 'High Protein');
 
--- zutat
+-- lieferant
 INSERT INTO lieferant (lieferant_id, lieferantenname, straße, hausnummer, postleitzahl, ort, telefonnummer, email) values (101, 'Bio-Hof Müller', 'Dorfstraße', '74', '24354', 'Weseby', '04354-9080', 'mueller@biohof.de');
 INSERT INTO lieferant (lieferant_id, lieferantenname, straße, hausnummer, postleitzahl, ort, telefonnummer, email) values (102, 'Obst-Hof Altes Land', 'Westerjork 74', '76', '21635', 'Jork', '04162-4523', 'info@biohof-altesland.de');
 INSERT INTO lieferant (lieferant_id, lieferantenname, straße, hausnummer, postleitzahl, ort, telefonnummer, email) values (103, 'Molkerei Henning', 'Molkereiwegkundekunde', '13','19217', 'Dechow', '038873-8976', 'info@molkerei-henning.de');
