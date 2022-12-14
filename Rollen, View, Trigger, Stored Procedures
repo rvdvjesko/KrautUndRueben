@@ -59,7 +59,7 @@ TO read_edit_zutat_rezept_lieferant;
 
 
 
- -- ------------------------------------- Stores Prodedures -------------------------------------
+ -- ------------------------------------- Stored Prodedures -------------------------------------
  
  -- 1. Anhand der Kunden ID alle Bestellungen mit aufgelisteten Zutaten abrufen
  
