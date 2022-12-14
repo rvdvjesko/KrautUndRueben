@@ -161,3 +161,16 @@ order by k.nachname desc;
 
 select avg(b.rechnungsbetrag)
 from bestellung b ;
+
+-- Auswahl aller Lieferanten, die Zutaten liefern die in Rezepten enthalten sind
+
+select l.lieferantenname, z.zutatname, r.rezeptname 
+from lieferant l
+join lieferant_liefert_zutat llz 
+on llz.lieferant_id = l.lieferant_id 
+left join zutat z 
+on z.zutat_id = llz.zutat_id 
+right join rezept_enthält_zutat rez 
+on rez.zutat_id = z.zutat_id
+left join rezept r 
+on r.rezept_id = rez.rezept_id;
