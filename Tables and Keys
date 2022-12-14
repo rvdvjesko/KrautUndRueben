@@ -27,7 +27,7 @@ CREATE TABLE bestellung (
 CREATE TABLE bestellung_enthält_zutat (
 	bestellung_id int,
 	zutat_id int,
-	menge decimal(5,2),
+	menge int,
 	PRIMARY KEY (bestellung_id, zutat_id) -- auch FK
 );
 
