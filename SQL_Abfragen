@@ -6,8 +6,8 @@ inner join Rezept_enthält_Zutat ret
 on z.Zutat_ID = ret.Zutat_ID
 inner join Rezept r
 on r.Rezept_ID = ret.Rezept_ID
-where r.Rezeptname like 'Kartoffelsuppe'
-order by z.Zutatname;
+where r.Rezeptname like 'Kartoffel%'
+order by r.rezeptname;
 
 -- Auswahl aller Rezepte einer bestimmten Ernährungskategorie
 
