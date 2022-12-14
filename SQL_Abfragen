@@ -43,7 +43,7 @@ inner join Rezept_enthält_Zutat ret
 on z.Zutat_ID = ret.Zutat_ID
 inner join Rezept r
 on r.Rezept_ID = ret.Rezept_ID
-where z.Zutatname = "Tomate";
+where z.Zutatname like '%Milch%';
 
 
 -- Auswahl aller Zutaten, die bisher keinem Rezept zugeordnet sind
