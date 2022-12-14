@@ -167,7 +167,29 @@ WHERE zutat_id = 1002;
 select * from preisentwicklung_zutat;
 
 
+-- 2. Dieser Trigger überprüft nach dem löschen der personenbezogenen Daten aus der Tabelle 'Kunden', 
+-- dass diese auch wirklich leer sind und speichert das Ergebnis in die Tabelle 'gelöschte_kundendaten'
 
+create table gelöschte_kundendaten (
+	Kunden_ID int,
+	Daten_gelöscht varchar(3),
+	Datum timestamp
+);
+
+DELIMITER $$ 
+
+CREATE TRIGGER gelöschte_kundendaten AFTER UPDATE 
+	ON kunde 
+	FOR EACH ROW 
+	BEGIN 
+	IF (new.vorname IS null and new.nachname IS null and new.geburtsdatum IS null and new.straße IS null and new.hausnummer IS null and new.postleitzahl IS null and new.ort IS null and new.telefon IS null and new.email IS null) THEN
+	INSERT INTO gelöschte_kundendaten(Kunden_ID, Daten_gelöscht, Datum) VALUES(new.kunde_id, 'YES', NOW());
+	ELSE
+	INSERT INTO gelöschte_kundendaten(Kunden_ID, Daten_gelöscht, Datum) VALUES(new.kunde_id, 'NO', NOW());
+	END IF;
+	END; $$
+
+DELIMITER ;
 
 
 -- ------------------------------------- View -------------------------------------
