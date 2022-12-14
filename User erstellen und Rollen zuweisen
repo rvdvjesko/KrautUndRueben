@@ -1,0 +1,14 @@
+CREATE USER IF NOT EXISTS 'Horst'@'localhost' IDENTIFIED BY 'adminsbraucheneinstarkespasswort!';
+CREATE USER IF NOT EXISTS 'Ernst'@'localhost' IDENTIFIED BY 'Kundenserviceistwichtig;)';
+CREATE USER IF NOT EXISTS 'Gertrud'@'localhost' IDENTIFIED BY 'büch3rwurm';
+CREATE USER IF NOT EXISTS 'Marianne'@'localhost' IDENTIFIED BY 'FachkraftfürLagerlogistikundVerwaltung';
+
+GRANT 'admin_all_tables' TO 'Horst'@'localhost';
+GRANT 'read_edit_kunde' TO 'Ernst'@'localhost';
+GRANT 'read_all_tables' TO 'Gertrud'@'localhost';
+GRANT 'read_edit_zutat_rezept_lieferant' TO 'Marianne'@'localhost';
+SET DEFAULT ROLE ALL TO 
+	'Horst'@'localhost',
+	'Ernst'@'localhost',
+	'Gertrud'@'localhost',
+	'Marianne'@'localhost';
