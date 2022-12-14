@@ -27,7 +27,7 @@ CREATE TABLE bestellung (
 CREATE TABLE bestellung_enthält_zutat (
 	bestellung_id int,
 	zutat_id int,
-	menge int,
+	menge decimal(5,2),
 	PRIMARY KEY (bestellung_id, zutat_id) -- auch FK
 );
 
@@ -66,7 +66,7 @@ CREATE TABLE lieferant (
 CREATE TABLE rezept_enthält_zutat (
 	rezept_id int,
 	zutat_id int,
-	menge int,
+	menge decimal(5,2),
 	PRIMARY KEY (rezept_id, zutat_id) -- auch FK
 );
 
