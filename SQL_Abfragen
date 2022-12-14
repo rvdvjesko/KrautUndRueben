@@ -174,3 +174,19 @@ right join rezept_enthält_zutat rez
 on rez.zutat_id = z.zutat_id
 left join rezept r 
 on r.rezept_id = rez.rezept_id;
+
+-- Auswahl aller Zutaten, welche keine Beschränkungen haben.
+
+SELECT z.Zutatname
+FROM zutat z
+LEFT JOIN zutat_enthält_beschränkung zeb
+ON z.Zutat_ID = zeb.Zutat_ID
+WHERE zeb.Zutat_ID IS NULL;
+
+-- Auswahl aller Zutaten, welche eine bestimmte Beschränkung nicht enthalten
+
+SELECT z.Zutatname
+FROM zutat z
+LEFT JOIN zutat_enthält_beschränkung zeb
+ON z.Zutat_ID = zeb.Zutat_ID
+WHERE zeb.Beschränkung_ID != 1 OR zeb.zutat_id IS Null;
