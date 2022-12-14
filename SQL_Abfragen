@@ -6,7 +6,7 @@ inner join Rezept_enthält_Zutat ret
 on z.Zutat_ID = ret.Zutat_ID
 inner join Rezept r
 on r.Rezept_ID = ret.Rezept_ID
-where r.Rezeptname like "Kartoffelsuppe"
+where r.Rezeptname like 'Kartoffelsuppe'
 order by z.Zutatname;
 
 -- Auswahl aller Rezepte einer bestimmten Ernährungskategorie
@@ -25,7 +25,7 @@ INNER JOIN Rezept_enthält_ernährungskategorie ret
 ON e.Ernährungskategorie_ID = ret.Ernährungskategorie_ID
 INNER JOIN rezept r
 ON r.Rezept_ID = ret.Rezept_ID
-where e.Ernährungskategorie = "vegan";
+where e.Ernährungskategorie = 'vegan';
 
 -- Auswahl aller Rezepte, die eine gewisse Zutat enthalten
 
@@ -133,7 +133,7 @@ inner join (
  having Zutat_count < 5
 ) second_table
 on first_table.Rezept_ID = second_table.Rezept_ID
-where first_table.Ernährungskategorie = "vegan";
+where first_table.Ernährungskategorie = 'vegan';
 
 -- -------------------  eigene Abfragen ----------------
 
