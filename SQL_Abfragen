@@ -146,7 +146,7 @@ where m.mengeneinheit like 'Stück';
 
 -- Auswahl aller Kunden, die Bestellungen mit einer bestimmten Zutat haben
 
-select k.vorname, k.nachname
+select k.kunde_id, k.vorname, k.nachname, k.ort 
 from Kunde k 
 join bestellung b 
 on b.kunde_id  = k.kunde_id
