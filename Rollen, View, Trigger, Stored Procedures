@@ -114,7 +114,7 @@ call delete_kunde(2001);
 
  -- 3. Auskunft eines Kunden
 
- DELIMITER $$
+DELIMITER $$
 
 CREATE PROCEDURE auskunft_kunde(IN id int)
 BEGIN
