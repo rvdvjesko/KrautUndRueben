@@ -72,6 +72,8 @@ INSERT INTO rezept values (1, 'Kartoffelsuppe');
 INSERT INTO rezept values (2, 'Tomatensuppe');
 INSERT INTO rezept values (3, 'Salat');
 INSERT INTO rezept values (4, 'Tomatensauce à la Miracoli');
+INSERT INTO rezept values (5, 'Kartoffelsalat');
+INSERT INTO rezept values (6, 'Tomate-Mozzarella');
 
 -- bestellung
 INSERT INTO bestellung (bestelldatum, rechnungsbetrag, kunde_id) VALUES ('2020-07-01', 6.21, 2001);
@@ -162,6 +164,17 @@ INSERT INTO rezept_enthält_zutat values (3, 1007, 1);
 INSERT INTO rezept_enthält_zutat values (3, 1013, 1);
 INSERT INTO rezept_enthält_zutat values (3, 1014, 2);
 INSERT INTO rezept_enthält_zutat values (3, 1015, 1);
+
+# Zutaten für Rezept 4 hier einfügen...
+
+INSERT INTO rezept_enthält_zutat values (5, 1002, 2);
+INSERT INTO rezept_enthält_zutat values (5, 1006, 7);
+INSERT INTO rezept_enthält_zutat values (5, 1009, 1);
+INSERT INTO rezept_enthält_zutat values (5, 7043, 4);
+INSERT INTO rezept_enthält_zutat values (5, 5001, 5);
+
+INSERT INTO rezept_enthält_zutat values (6, 1003, 8);
+INSERT INTO rezept_enthält_zutat values (6, 3002, 1);
 
 -- zutat_enthält_ernährungskategorie
 INSERT INTO zutat_enthält_ernährungskategorie values (1001, 1);
@@ -255,13 +268,15 @@ INSERT INTO rezept_enthält_ernährungskategorie(rezept_id, ernährungskategorie
 INSERT INTO rezept_enthält_ernährungskategorie(rezept_id, ernährungskategorie_id) VALUES(3, 2);
 INSERT INTO rezept_enthält_ernährungskategorie(rezept_id, ernährungskategorie_id) VALUES(4, 1);
 INSERT INTO rezept_enthält_ernährungskategorie(rezept_id, ernährungskategorie_id) VALUES(4, 2);
-
+INSERT INTO rezept_enthält_ernährungskategorie(rezept_id, ernährungskategorie_id) VALUES(5, 5);
+INSERT INTO rezept_enthält_ernährungskategorie(rezept_id, ernährungskategorie_id) VALUES(6, 2);
 
 -- rezept_enthält_beschränkung
 INSERT INTO rezept_enthält_beschränkung(rezept_id, beschränkung_id) VALUES(2, 5);
 INSERT INTO rezept_enthält_beschränkung(rezept_id, beschränkung_id) VALUES(4, 2);
 INSERT INTO rezept_enthält_beschränkung(rezept_id, beschränkung_id) VALUES(4, 5);
-
+INSERT INTO rezept_enthält_beschränkung(rezept_id, beschränkung_id) VALUES(6, 1);
+INSERT INTO rezept_enthält_beschränkung(rezept_id, beschränkung_id) VALUES(6, 5);
 
 
 
