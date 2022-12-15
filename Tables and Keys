@@ -2,7 +2,9 @@ DROP DATABASE IF EXISTS KrautUndRueben;
 CREATE DATABASE IF NOT EXISTS KrautUndRueben;
 USE KrautUndRueben;
 
-CREATE TABLE Kunde (
+
+-- Kunde
+CREATE TABLE kunde (
   kunde_id int AUTO_INCREMENT NOT NULL,
   vorname varchar(50),
   nachname varchar(50),
@@ -16,6 +18,8 @@ CREATE TABLE Kunde (
   PRIMARY KEY (kunde_id)
 );
 
+
+-- Bestellung
 CREATE TABLE bestellung (
   bestellung_id int AUTO_INCREMENT NOT NULL,
   bestelldatum date,
@@ -24,6 +28,8 @@ CREATE TABLE bestellung (
   PRIMARY KEY(bestellung_id)
 );
 
+
+-- Bestellung_enthält_Zutat
 CREATE TABLE bestellung_enthält_zutat (
 	bestellung_id int,
 	zutat_id int,
@@ -32,6 +38,7 @@ CREATE TABLE bestellung_enthält_zutat (
 );
 
 
+-- Zutat
 CREATE TABLE zutat (
 	zutat_id int AUTO_INCREMENT NOT NULL,
 	zutatname varchar(50),
@@ -44,6 +51,8 @@ CREATE TABLE zutat (
 	PRIMARY KEY (zutat_id)
 );
 
+
+-- Lieferant_liefert_Zutat
 CREATE TABLE lieferant_liefert_zutat (
 	lieferant_id int,
 	zutat_id int,
@@ -51,6 +60,8 @@ CREATE TABLE lieferant_liefert_zutat (
 	PRIMARY KEY(lieferant_id, zutat_id) -- auch FK
 );
 
+
+-- Lieferant
 CREATE TABLE lieferant (
 	lieferant_id int AUTO_INCREMENT NOT NULL,
 	lieferantenname varchar(50),
@@ -63,6 +74,8 @@ CREATE TABLE lieferant (
 	PRIMARY KEY (lieferant_id)
 );
 
+
+-- Rezept_enthält_Zutat
 CREATE TABLE rezept_enthält_zutat (
 	rezept_id int,
 	zutat_id int,
@@ -70,6 +83,8 @@ CREATE TABLE rezept_enthält_zutat (
 	PRIMARY KEY (rezept_id, zutat_id) -- auch FK
 );
 
+
+-- Rezept
 CREATE TABLE rezept (
 	rezept_id int AUTO_INCREMENT NOT NULL,
 	rezeptname varchar(50),
@@ -77,55 +92,56 @@ CREATE TABLE rezept (
 	PRIMARY KEY (rezept_id)
 );
 
+
+-- Mengeneinheit
 CREATE TABLE mengeneinheit (
 	mengeneinheit_id int,
 	mengeneinheit varchar(50),
 	PRIMARY KEY (mengeneinheit_id)
 );
 
--- CREATE TABLE nährstoffangabe (
--- nährstoff_id int AUTO_INCREMENT NOT NULL,
--- 	kalorien decimal(5,2),
--- 	natrium decimal(5,2),
--- 	ballaststoffe decimal(5,2),
--- 	protein decimal(5,2),
--- 	kohlenhydrate decimal(5,2),
--- 	davon_zucker decimal(5,2),
--- 	fett decimal(5,2),
--- 	gesättigte_fettsäuren decimal(5,2),
--- 	PRIMARY KEY (nährstoff_id)
--- );
 
-CREATE TABLE zutat_enthält_ernährungskategorie (
-	zutat_id int,
-	ernährungskategorie_id int,
-	PRIMARY KEY (zutat_id, ernährungskategorie_id) -- auch FK
-);
-
-CREATE TABLE zutat_enthält_beschränkung (
-	zutat_id int,
-	beschränkung_id int,
-	PRIMARY KEY (zutat_id, beschränkung_id) -- auch FK
-);
-
+-- Ernährungskategorie
 CREATE TABLE ernährungskategorie (
 	ernährungskategorie_id int,
 	ernährungskategorie varchar(50),
 	PRIMARY KEY(ernährungskategorie_id)
 );
 
+
+-- Beschränkung
 CREATE TABLE beschränkung (
 	beschränkung_id int,
 	beschränkung varchar(50),
 	PRIMARY KEY(beschränkung_id)
 );
 
+
+-- Zutat_enthält_Ernährungskategorie
+CREATE TABLE zutat_enthält_ernährungskategorie (
+	zutat_id int,
+	ernährungskategorie_id int,
+	PRIMARY KEY (zutat_id, ernährungskategorie_id) -- auch FK
+);
+
+
+-- Zutat_enthält_Beschränkung
+CREATE TABLE zutat_enthält_beschränkung (
+	zutat_id int,
+	beschränkung_id int,
+	PRIMARY KEY (zutat_id, beschränkung_id) -- auch FK
+);
+
+
+-- Rezept_enthält_Ernährungskategorie
 CREATE TABLE rezept_enthält_ernährungskategorie (
 	rezept_id int,
 	ernährungskategorie_id int,
 	PRIMARY KEY(rezept_id, ernährungskategorie_id)
 );
 
+
+-- Rezept_enthält_Beschränkung
 CREATE TABLE rezept_enthält_beschränkung (
 	rezept_id int,
 	beschränkung_id int,
@@ -133,31 +149,48 @@ CREATE TABLE rezept_enthält_beschränkung (
 );
 
 
-
 /******************************************************************************/
 /***                              Foreign Keys                              ***/
 /******************************************************************************/
+
+-- Bestellung
 ALTER TABLE bestellung ADD FOREIGN KEY (kunde_id) REFERENCES kunde(kunde_id); 
 
+
+-- Bestellung_enthält_Zutat
 ALTER TABLE bestellung_enthält_zutat ADD FOREIGN KEY (bestellung_id) REFERENCES bestellung(bestellung_id);
 ALTER TABLE bestellung_enthält_zutat ADD FOREIGN KEY (zutat_id) REFERENCES zutat(zutat_id);
 
+
+-- Zutat
 ALTER TABLE zutat ADD FOREIGN KEY (mengeneinheit) REFERENCES mengeneinheit(mengeneinheit_id);
 
+
+-- Lieferant_liefert_Zutat
 ALTER TABLE lieferant_liefert_zutat ADD FOREIGN KEY (lieferant_id) REFERENCES lieferant(lieferant_id);
 ALTER TABLE lieferant_liefert_zutat ADD FOREIGN KEY (zutat_id) REFERENCES zutat(zutat_id);
 
+
+-- Rezept_enthält_Zutat
 ALTER TABLE rezept_enthält_zutat ADD FOREIGN KEY (rezept_id) REFERENCES rezept(rezept_id);
 ALTER TABLE rezept_enthält_zutat ADD FOREIGN KEY (zutat_id) REFERENCES zutat(zutat_id);
 
+
+-- Zutat_enthält_Ernährungskategorie
 ALTER TABLE zutat_enthält_ernährungskategorie ADD FOREIGN KEY (zutat_id) REFERENCES zutat(zutat_id);
 ALTER TABLE zutat_enthält_ernährungskategorie ADD FOREIGN KEY (ernährungskategorie_id) REFERENCES ernährungskategorie(ernährungskategorie_id);
 
+
+-- Zutat_enthält_Beschränkung
 ALTER TABLE zutat_enthält_beschränkung ADD FOREIGN KEY (zutat_id) REFERENCES zutat(zutat_id);
 ALTER TABLE zutat_enthält_beschränkung ADD FOREIGN KEY (beschränkung_id) REFERENCES beschränkung(beschränkung_id);
 
+
+-- Rezept_enthält_Ernährungskategorie
 ALTER TABLE rezept_enthält_ernährungskategorie ADD FOREIGN KEY (rezept_id) REFERENCES rezept (rezept_id);
 ALTER TABLE rezept_enthält_ernährungskategorie ADD FOREIGN KEY (ernährungskategorie_id) REFERENCES ernährungskategorie (ernährungskategorie_id);
 
+
+-- Rezept_enthält_Beschränkung
 ALTER TABLE rezept_enthält_beschränkung ADD FOREIGN KEY (rezept_id) REFERENCES rezept(rezept_id);
 ALTER TABLE rezept_enthält_beschränkung ADD FOREIGN KEY (beschränkung_id) REFERENCES beschränkung(beschränkung_id);
