@@ -79,6 +79,7 @@ INSERT INTO zutat (zutat_ID, zutatname, mengeneinheit, nettopreis, bestand,  kal
 INSERT INTO zutat (zutat_ID, zutatname, mengeneinheit, nettopreis, bestand,  kalorien, kohlenhydrate, protein) VALUES (1016, 'Tomatenmark', 1, 0.69, 2, 13, 4.2, 0);
 INSERT INTO zutat (zutat_ID, zutatname, mengeneinheit, nettopreis, bestand,  kalorien, kohlenhydrate, protein) VALUES (1017, 'Oregano', 2, 0.42, 1, 30.6, 6.4, 1.1);
 INSERT INTO zutat (zutat_ID, zutatname, mengeneinheit, nettopreis, bestand,  kalorien, kohlenhydrate, protein) VALUES (6004, 'Nudeln', 1, 1.89, 14, 139, 26, 5.8);
+INSERT INTO zutat (zutat_ID, zutatname, mengeneinheit, nettopreis, bestand,  kalorien, kohlenhydrate, protein) VALUES (6005, 'Haferflocken', 1, 0.29, 4, 350, 60, 2.4);
 
 
 
@@ -89,6 +90,7 @@ INSERT INTO rezept values (3, 'Salat');
 INSERT INTO rezept values (4, 'Tomatensauce à la Miracoli');
 INSERT INTO rezept values (5, 'Kartoffelsalat');
 INSERT INTO rezept values (6, 'Tomate-Mozzarella');
+INSERT INTO rezept values (7, 'Porridge');
 
 
 
@@ -209,6 +211,14 @@ INSERT INTO rezept_enthält_zutat values (5, 5001, 5);
 INSERT INTO rezept_enthält_zutat values (6, 1003, 8);
 INSERT INTO rezept_enthält_zutat values (6, 3002, 1);
 
+-- Zutaten für das Rezept Porridge
+INSERT INTO rezept_enthält_zutat values (7, 6005, 4);
+INSERT INTO rezept_enthält_zutat values (7, 3004, 0.5);
+
+-- Zutaten für das Rezept Kartoffelpuffer
+INSERT INTO rezept_enthält_zutat values (8, 1006, 6);
+INSERT INTO rezept_enthält_zutat values (8, 4001, 2);
+
 
 
 -- Zutat_enthält_Ernährungskategorie
@@ -257,6 +267,15 @@ INSERT INTO zutat_enthält_ernährungskategorie values (1014, 2);
 INSERT INTO zutat_enthält_ernährungskategorie values (1015, 1);
 INSERT INTO zutat_enthält_ernährungskategorie values (1015, 2);
 
+
+INSERT INTO zutat_enthält_ernährungskategorie values (1016, 1);
+INSERT INTO zutat_enthält_ernährungskategorie values (1016, 2);
+
+
+INSERT INTO zutat_enthält_ernährungskategorie values (1017, 1);
+INSERT INTO zutat_enthält_ernährungskategorie values (1017, 2);
+
+
 INSERT INTO zutat_enthält_ernährungskategorie values (2001, 1);
 INSERT INTO zutat_enthält_ernährungskategorie values (2001, 2);
 
@@ -271,14 +290,21 @@ INSERT INTO zutat_enthält_ernährungskategorie values (3004, 2);
 
 INSERT INTO zutat_enthält_ernährungskategorie values (4001, 2);
 
-INSERT INTO zutat_enthält_ernährungskategorie values (6003, 1);
-INSERT INTO zutat_enthält_ernährungskategorie values (6003, 2);
+INSERT INTO zutat_enthält_ernährungskategorie values (6001, 1);
+INSERT INTO zutat_enthält_ernährungskategorie values (6001, 2);
 
 INSERT INTO zutat_enthält_ernährungskategorie values (6002, 1);
 INSERT INTO zutat_enthält_ernährungskategorie values (6002, 2);
 
-INSERT INTO zutat_enthält_ernährungskategorie values (6001, 1);
-INSERT INTO zutat_enthält_ernährungskategorie values (6001, 2);
+INSERT INTO zutat_enthält_ernährungskategorie values (6003, 1);
+INSERT INTO zutat_enthält_ernährungskategorie values (6003, 2);
+
+INSERT INTO zutat_enthält_ernährungskategorie values (6004, 1);
+INSERT INTO zutat_enthält_ernährungskategorie values (6004, 2);
+
+INSERT INTO zutat_enthält_ernährungskategorie values (6005, 1);
+INSERT INTO zutat_enthält_ernährungskategorie values (6005, 2);
+
 
 INSERT INTO zutat_enthält_ernährungskategorie values (7043, 1);
 INSERT INTO zutat_enthält_ernährungskategorie values (7043, 2);
@@ -295,6 +321,8 @@ INSERT INTO zutat_enthält_Beschränkung (zutat_id, beschränkung_id) VALUES (30
 INSERT INTO zutat_enthält_Beschränkung (zutat_id, beschränkung_id) VALUES (3003, 1);
 INSERT INTO zutat_enthält_Beschränkung (zutat_id, beschränkung_id) VALUES (4001, 4);
 INSERT INTO zutat_enthält_Beschränkung (zutat_id, beschränkung_id) VALUES (5001, 2);
+INSERT INTO zutat_enthält_Beschränkung (zutat_id, beschränkung_id) VALUES (6003, 2);
+INSERT INTO zutat_enthält_Beschränkung (zutat_id, beschränkung_id) VALUES (6004, 2);
 
 
 
@@ -309,6 +337,10 @@ INSERT INTO rezept_enthält_ernährungskategorie(rezept_id, ernährungskategorie
 INSERT INTO rezept_enthält_ernährungskategorie(rezept_id, ernährungskategorie_id) VALUES(4, 2);
 INSERT INTO rezept_enthält_ernährungskategorie(rezept_id, ernährungskategorie_id) VALUES(5, 5);
 INSERT INTO rezept_enthält_ernährungskategorie(rezept_id, ernährungskategorie_id) VALUES(6, 2);
+INSERT INTO rezept_enthält_ernährungskategorie(rezept_id, ernährungskategorie_id) VALUES(7, 1);
+INSERT INTO rezept_enthält_ernährungskategorie(rezept_id, ernährungskategorie_id) VALUES(7, 2);
+INSERT INTO rezept_enthält_ernährungskategorie(rezept_id, ernährungskategorie_id) VALUES(8, 2);
+
 
 
 
@@ -318,3 +350,4 @@ INSERT INTO rezept_enthält_beschränkung(rezept_id, beschränkung_id) VALUES(4,
 INSERT INTO rezept_enthält_beschränkung(rezept_id, beschränkung_id) VALUES(4, 5);
 INSERT INTO rezept_enthält_beschränkung(rezept_id, beschränkung_id) VALUES(6, 1);
 INSERT INTO rezept_enthält_beschränkung(rezept_id, beschränkung_id) VALUES(6, 5);
+INSERT INTO rezept_enthält_beschränkung(rezept_id, beschränkung_id) VALUES(8, 4);
