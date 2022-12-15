@@ -1,5 +1,4 @@
 -- Auswahl aller Zutaten eines Rezeptes nach Rezeptname
-
 select r.Rezeptname, z.Zutatname
 from Zutat z
 inner join Rezept_enthält_Zutat ret
@@ -9,8 +8,9 @@ on r.Rezept_ID = ret.Rezept_ID
 where r.Rezeptname like 'Kartoffel%'
 order by r.rezeptname;
 
--- Auswahl aller Rezepte einer bestimmten Ernährungskategorie
 
+
+-- Auswahl aller Rezepte einer bestimmten Ernährungskategorie
 SELECT r.Rezeptname, e.Ernährungskategorie
 FROM Ernährungskategorie e
 INNER JOIN Rezept_enthält_ernährungskategorie ret
@@ -19,8 +19,9 @@ INNER JOIN rezept r
 ON r.Rezept_ID = ret.Rezept_ID
 where e.Ernährungskategorie = 'vegan';
 
--- Auswahl aller Rezepte, die eine gewisse Zutat enthalten
 
+
+-- Auswahl aller Rezepte, die eine gewisse Zutat enthalten
 select r.Rezeptname, z.Zutatname
 from Zutat z
 inner join Rezept_enthält_Zutat ret
@@ -30,16 +31,17 @@ on r.Rezept_ID = ret.Rezept_ID
 where z.Zutatname like '%Milch%';
 
 
--- Auswahl aller Zutaten, die bisher keinem Rezept zugeordnet sind
 
+-- Auswahl aller Zutaten, die bisher keinem Rezept zugeordnet sind
 select z.Zutatname
 from Zutat z
 left join Rezept_enthält_Zutat rez
 on z.Zutat_ID = rez.Zutat_ID
 where rez.Zutat_ID is null;
 
--- Auswahl aller Rezepte, die eine bestimmte Kalorienmenge nicht überschreiten
 
+
+-- Auswahl aller Rezepte, die eine bestimmte Kalorienmenge nicht überschreiten
 select r.Rezeptname, sum(z.Kalorien*rez.Menge) as Kalorien
 from Rezept r
 inner join Rezept_enthält_Zutat rez
@@ -49,9 +51,10 @@ on rez.Zutat_ID = z.Zutat_ID
 group by r.Rezeptname
 having Kalorien <= 500;
 
--- Berechnung der durchschnittlichen Nährwerte aller Bestellungen eines Kunden
 
--- (Ohne Name)
+
+-- Berechnung der durchschnittlichen Nährwerte aller Bestellungen eines Kunden 
+-- (mit der ID)
 select b.Kunde_ID, avg(z.Kalorien*bez.Menge) as Kalorien_durchschnittlich, avg(z.Kohlenhydrate*bez.Menge) as Kohlenhydrate_durchschnittlich, avg(z.Protein*bez.Menge) as Protein_durchschnittlich
 from Bestellung b
 inner join Bestellung_enthält_Zutat bez
@@ -60,7 +63,7 @@ inner join Zutat z
 on bez.Zutat_ID = z.Zutat_ID
 group by Kunde_ID;
 
--- (Mit Name)
+-- (mit dem Namen)
 select b.Kunde_ID, k.Vorname, k.Nachname, avg(z.Kalorien*bez.Menge) as Kalorien_durchschnittlich, avg(z.Kohlenhydrate*bez.Menge) as Kohlenhydrate_durchschnittlich, avg(z.Protein*bez.Menge) as Protein_durchschnittlich
 from Bestellung b
 inner join Bestellung_enthält_Zutat bez
@@ -70,7 +73,6 @@ on bez.Zutat_ID = z.Zutat_ID
 inner join Kunde k
 on b.Kunde_ID = k.Kunde_ID
 group by Kunde_ID;
-
 
 -- (Mit Name und gerundete Werte)
 select b.Kunde_ID, k.Vorname, k.Nachname,
@@ -86,8 +88,9 @@ inner join Kunde k
 on b.Kunde_ID = k.Kunde_ID
 group by Kunde_ID;
 
--- Auswahl aller Rezepte, die weniger als fünf Zutaten enthalten
 
+
+-- Auswahl aller Rezepte, die weniger als fünf Zutaten enthalten
 select r.Rezeptname, count(rez.Zutat_ID) as Zutat_Anzahl
 from Rezept r
 right join Rezept_enthält_Zutat rez
@@ -95,8 +98,9 @@ on r.Rezept_ID = rez.Rezept_ID
 group by r.Rezeptname
 having Zutat_Anzahl < 5;
 
--- Auswahl aller Rezepte, die weniger als fünf Zutaten enthalten und eine bestimmte Ernährungskategorie erfüllen
 
+
+-- Auswahl aller Rezepte, die weniger als fünf Zutaten enthalten und eine bestimmte Ernährungskategorie erfüllen
 select first_table.Rezeptname,
 first_table.Ernährungskategorie,
 second_table.Zutat_Anzahl
@@ -119,17 +123,21 @@ inner join (
 on first_table.Rezept_ID = second_table.Rezept_ID
 where first_table.Ernährungskategorie = 'vegan';
 
+
+
+
+
 -- -------------------  eigene Abfragen ----------------
 
 -- Auswahl aller Zutaten nach Mengeneinheit
-
 select z.zutatname, m.mengeneinheit 
 from zutat z
 join mengeneinheit m
 where m.mengeneinheit like 'Stück';
 
--- Auswahl aller Kunden, die Bestellungen mit einer bestimmten Zutat haben
 
+
+-- Auswahl aller Kunden, die Bestellungen mit einer bestimmten Zutat haben
 select k.kunde_id, k.vorname, k.nachname, k.ort 
 from Kunde k 
 join bestellung b 
@@ -141,13 +149,15 @@ on z.zutat_id = bez.zutat_id
 where z.zutatname like 'Tomate'
 order by k.nachname desc; 
 
--- Durchschnittlicher Rechnungsbetrag
 
+
+-- durchschnittlicher Rechnungsbetrag
 select avg(b.rechnungsbetrag)
 from bestellung b ;
 
--- Auswahl aller Lieferanten, die Zutaten liefern die in Rezepten enthalten sind
 
+
+-- Auswahl aller Lieferanten, die Zutaten liefern und in Rezepten enthalten sind
 select l.lieferantenname, z.zutatname, r.rezeptname 
 from lieferant l
 join lieferant_liefert_zutat llz 
@@ -159,16 +169,18 @@ on rez.zutat_id = z.zutat_id
 join rezept r 
 on r.rezept_id = rez.rezept_id;
 
--- Auswahl aller Zutaten, welche keine Beschränkungen haben.
 
+
+-- Auswahl aller Zutaten, welche keine Beschränkungen haben
 SELECT z.Zutatname
 FROM zutat z
 LEFT JOIN zutat_enthält_beschränkung zeb
 ON z.Zutat_ID = zeb.Zutat_ID
 WHERE zeb.Zutat_ID IS NULL;
 
--- Auswahl aller Zutaten, welche eine bestimmte Beschränkung nicht enthalten
 
+
+-- Auswahl aller Zutaten, welche eine bestimmte Beschränkung nicht enthalten
 SELECT z.Zutatname
 FROM zutat z
 LEFT JOIN zutat_enthält_beschränkung zeb
