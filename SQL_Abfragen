@@ -14,28 +14,12 @@ order by r.rezeptname;
 SELECT r.Rezeptname, e.Ernährungskategorie
 FROM Ernährungskategorie e
 INNER JOIN Rezept_enthält_ernährungskategorie ret
-ON e.Ernährungskategorie_ID = 1
-INNER JOIN rezept r
-ON r.Rezept_ID = ret.Rezept_ID
-
-
-SELECT r.Rezeptname, e.Ernährungskategorie
-FROM Ernährungskategorie e
-INNER JOIN Rezept_enthält_ernährungskategorie ret
 ON e.Ernährungskategorie_ID = ret.Ernährungskategorie_ID
 INNER JOIN rezept r
 ON r.Rezept_ID = ret.Rezept_ID
 where e.Ernährungskategorie = 'vegan';
 
 -- Auswahl aller Rezepte, die eine gewisse Zutat enthalten
-
-select r.Rezeptname, z.Zutatname
-from Zutat z
-inner join Rezept_enthält_Zutat ret
-on z.Zutat_ID = 1003
-inner join Rezept r
-on r.Rezept_ID = ret.Rezept_ID
-
 
 select r.Rezeptname, z.Zutatname
 from Zutat z
@@ -104,18 +88,18 @@ group by Kunde_ID;
 
 -- Auswahl aller Rezepte, die weniger als fünf Zutaten enthalten
 
-select r.Rezeptname, count(rez.Zutat_ID) as Zutat_count
+select r.Rezeptname, count(rez.Zutat_ID) as Zutat_Anzahl
 from Rezept r
 right join Rezept_enthält_Zutat rez
 on r.Rezept_ID = rez.Rezept_ID
 group by r.Rezeptname
-having Zutat_count < 5;
+having Zutat_Anzahl < 5;
 
 -- Auswahl aller Rezepte, die weniger als fünf Zutaten enthalten und eine bestimmte Ernährungskategorie erfüllen
 
 select first_table.Rezeptname,
 first_table.Ernährungskategorie,
-second_table.Zutat_count
+second_table.Zutat_Anzahl
 from (
  select r.Rezeptname, r.Rezept_ID, e.ernährungskategorie
  from Rezept r
@@ -125,12 +109,12 @@ from (
  on ree.Ernährungskategorie_ID = e.Ernährungskategorie_ID
 ) first_table
 inner join (
- select r.Rezept_ID, count(rez.Zutat_ID) as Zutat_count
+ select r.Rezept_ID, count(rez.Zutat_ID) as Zutat_Anzahl
  from Rezept r
  inner join Rezept_enthält_Zutat rez
  on r.Rezept_ID = rez.Rezept_ID
  group by r.Rezept_ID
- having Zutat_count < 5
+ having Zutat_Anzahl < 5
 ) second_table
 on first_table.Rezept_ID = second_table.Rezept_ID
 where first_table.Ernährungskategorie = 'vegan';
