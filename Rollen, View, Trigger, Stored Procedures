@@ -205,3 +205,14 @@ join lieferant l
 on llz.Lieferant_ID = l.Lieferant_ID;
 
 select * from zutat_lieferant;
+
+-- Versanddaten für Versandunternehmen (damit sie nicht alle Kundendaten sondern lediglich Versandrelevante sehen dürfen)
+CREATE OR REPLACE VIEW daten_für_versandunternehmen AS
+
+SELECT b.bestellung_id, k.Vorname, k.Nachname, k.Straße, k.Hausnummer, k.Postleitzahl, k.Ort, k.Email
+FROM bestellung b
+JOIN kunde k 
+ON b.kunde_id = k.kunde_id
+ORDER BY bestellung_id;
+
+SELECT * FROM daten_für_versandunternehmen
