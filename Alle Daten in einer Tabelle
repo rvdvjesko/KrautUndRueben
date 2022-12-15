@@ -1,4 +1,4 @@
--- mengeneinheit
+-- Mengeneinheit
 INSERT INTO mengeneinheit (mengeneinheit_id, mengeneinheit) VALUES (1,'Stück');
 INSERT INTO mengeneinheit (mengeneinheit_id, mengeneinheit) VALUES (2,'Bund');
 INSERT INTO mengeneinheit (mengeneinheit_id, mengeneinheit) VALUES (3,'Liter');
@@ -9,7 +9,7 @@ INSERT INTO mengeneinheit (mengeneinheit_id, mengeneinheit) VALUES (7,'Würfel')
 
 
 
--- beschränkung
+-- Beschränkung
 INSERT INTO beschränkung (beschränkung_id, beschränkung) VALUES (1, 'Laktose');
 INSERT INTO beschränkung (beschränkung_id, beschränkung) VALUES (2, 'Gluten');
 INSERT INTO beschränkung (beschränkung_id, beschränkung) VALUES (3, 'Erdnuss');
@@ -18,7 +18,7 @@ INSERT INTO beschränkung (beschränkung_id, beschränkung) VALUES (5, 'Tomaten'
 
 
 
--- ernährungskategorie
+-- Ernährungskategorie
 INSERT INTO ernährungskategorie values (1, 'Vegan');
 INSERT INTO ernährungskategorie values (2, 'Vegetarisch');
 INSERT INTO ernährungskategorie values (3, 'Frutarisch');
@@ -27,14 +27,14 @@ INSERT INTO ernährungskategorie values (5, 'High Protein');
 
 
 
--- lieferant
+-- Lieferant
 INSERT INTO lieferant (lieferant_id, lieferantenname, straße, hausnummer, postleitzahl, ort, telefonnummer, email) values (101, 'Bio-Hof Müller', 'Dorfstraße', '74', '24354', 'Weseby', '04354-9080', 'mueller@biohof.de');
 INSERT INTO lieferant (lieferant_id, lieferantenname, straße, hausnummer, postleitzahl, ort, telefonnummer, email) values (102, 'Obst-Hof Altes Land', 'Westerjork 74', '76', '21635', 'Jork', '04162-4523', 'info@biohof-altesland.de');
 INSERT INTO lieferant (lieferant_id, lieferantenname, straße, hausnummer, postleitzahl, ort, telefonnummer, email) values (103, 'Molkerei Henning', 'Molkereiwegkundekunde', '13','19217', 'Dechow', '038873-8976', 'info@molkerei-henning.de');
 
 
 
--- kunde
+-- Kunde
 INSERT INTO kunde (kunde_id, vorname, nachname, geburtsdatum, straße, hausnummer, postleitzahl, ort, email) VALUES (2001, 'Wellensteyn','Kira','1990-05-05','Eppendorfer LandStraße', '104', '20249','Hamburg','k.wellensteyn@yahoo.de');
 INSERT INTO kunde (kunde_id, vorname, nachname, geburtsdatum, straße, hausnummer, postleitzahl, ort, email) VALUES (2002, 'Foede','Dorothea','2000-03-24','Ohmstraße', '23', '22765','Hamburg','d.foede@web.de');
 INSERT INTO kunde (kunde_id, vorname, nachname, geburtsdatum, straße, hausnummer, postleitzahl, ort, email) VALUES (2003, 'Leberer','Sigrid','1989-09-21','Bilser Berg', '6', '20459','Hamburg','sigrid@leberer.de');
@@ -47,7 +47,7 @@ INSERT INTO kunde (kunde_id, vorname, nachname, geburtsdatum, straße, hausnumme
 
 
 
--- zutat
+-- Zutat
 INSERT INTO zutat (zutat_ID, zutatname, mengeneinheit, nettopreis, bestand,  kalorien, kohlenhydrate, protein) VALUES (1001,'Zucchini',1, 0.89, 100, 19,2,1.6);
 INSERT INTO zutat (zutat_ID, zutatname, mengeneinheit, nettopreis, bestand,  kalorien, kohlenhydrate, protein) VALUES (1002,'Zwiebel',1, 0.15, 50, 28, 4.9, 1.20);
 INSERT INTO zutat (zutat_ID, zutatname, mengeneinheit, nettopreis, bestand,  kalorien, kohlenhydrate, protein) VALUES (1003, 'Tomate', 1, 0.45, 50, 18, 2.6, 1);
@@ -82,7 +82,7 @@ INSERT INTO zutat (zutat_ID, zutatname, mengeneinheit, nettopreis, bestand,  kal
 
 
 
--- rezept
+-- Rezept
 INSERT INTO rezept values (1, 'Kartoffelsuppe');
 INSERT INTO rezept values (2, 'Tomatensuppe');
 INSERT INTO rezept values (3, 'Salat');
@@ -92,7 +92,7 @@ INSERT INTO rezept values (6, 'Tomate-Mozzarella');
 
 
 
--- bestellung
+-- Bestellung
 INSERT INTO bestellung (bestelldatum, rechnungsbetrag, kunde_id) VALUES ('2020-07-01', 6.21, 2001);
 INSERT INTO bestellung (bestelldatum, rechnungsbetrag, kunde_id) VALUES ('2020-07-08', 32.96, 2002);
 INSERT INTO bestellung (bestelldatum, rechnungsbetrag, kunde_id) VALUES ('2020-08-01',24.08, 2003);
@@ -108,7 +108,7 @@ INSERT INTO bestellung (bestelldatum, rechnungsbetrag, kunde_id) VALUES ('2020-0
 
 
 
--- bestellung_enthält_Zutat
+-- Bestellung_enthält_Zutat
 INSERT INTO bestellung_enthält_zutat(bestellung_ID, zutat_ID, menge) VALUES (1, 1001, 5);
 INSERT INTO bestellung_enthält_zutat(bestellung_ID, zutat_ID, menge) VALUES (1, 1002, 3);
 INSERT INTO bestellung_enthält_zutat(bestellung_ID, zutat_ID, menge) VALUES (1, 1006, 2);
@@ -138,7 +138,7 @@ INSERT INTO bestellung_enthält_zutat(bestellung_ID, zutat_ID, menge) VALUES (12
 
 
 
--- lieferant_liefert_Zutat
+-- Lieferant_liefert_Zutat
 INSERT INTO lieferant_liefert_zutat VALUES(101, 1001, 90);
 INSERT INTO lieferant_liefert_zutat VALUES(101, 1002, 20);
 INSERT INTO lieferant_liefert_zutat VALUES(101, 1003, 33);
@@ -211,7 +211,7 @@ INSERT INTO rezept_enthält_zutat values (6, 3002, 1);
 
 
 
--- zutat_enthält_ernährungskategorie
+-- Zutat_enthält_Ernährungskategorie
 INSERT INTO zutat_enthält_ernährungskategorie values (1001, 1);
 INSERT INTO zutat_enthält_ernährungskategorie values (1001, 2);
 
@@ -288,7 +288,7 @@ INSERT INTO zutat_enthält_ernährungskategorie values (9001, 2);
 
 
 
--- zutat_enthält_Beschränkung
+-- Zutat_enthält_Beschränkung
 INSERT INTO zutat_enthält_Beschränkung (zutat_id, beschränkung_id) VALUES (1003, 5);
 INSERT INTO zutat_enthält_Beschränkung (zutat_id, beschränkung_id) VALUES (3001, 1);
 INSERT INTO zutat_enthält_Beschränkung (zutat_id, beschränkung_id) VALUES (3002, 1);
@@ -298,7 +298,7 @@ INSERT INTO zutat_enthält_Beschränkung (zutat_id, beschränkung_id) VALUES (50
 
 
 
--- rezept_enthält_ernährungskategorie
+-- Rezept_enthält_Ernährungskategorie
 INSERT INTO rezept_enthält_ernährungskategorie(rezept_id, ernährungskategorie_id) VALUES(1, 1);
 INSERT INTO rezept_enthält_ernährungskategorie(rezept_id, ernährungskategorie_id) VALUES(1, 2);
 INSERT INTO rezept_enthält_ernährungskategorie(rezept_id, ernährungskategorie_id) VALUES(2, 1);
@@ -312,12 +312,9 @@ INSERT INTO rezept_enthält_ernährungskategorie(rezept_id, ernährungskategorie
 
 
 
--- rezept_enthält_beschränkung
+-- Rezept_enthält_Beschränkung
 INSERT INTO rezept_enthält_beschränkung(rezept_id, beschränkung_id) VALUES(2, 5);
 INSERT INTO rezept_enthält_beschränkung(rezept_id, beschränkung_id) VALUES(4, 2);
 INSERT INTO rezept_enthält_beschränkung(rezept_id, beschränkung_id) VALUES(4, 5);
 INSERT INTO rezept_enthält_beschränkung(rezept_id, beschränkung_id) VALUES(6, 1);
 INSERT INTO rezept_enthält_beschränkung(rezept_id, beschränkung_id) VALUES(6, 5);
-
-
-
