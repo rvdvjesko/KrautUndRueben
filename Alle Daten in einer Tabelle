@@ -91,6 +91,7 @@ INSERT INTO rezept values (4, 'Tomatensauce à la Miracoli');
 INSERT INTO rezept values (5, 'Kartoffelsalat');
 INSERT INTO rezept values (6, 'Tomate-Mozzarella');
 INSERT INTO rezept values (7, 'Porridge');
+INSERT INTO rezept values (8, 'Kartoffelpuffer');
 
 
 
