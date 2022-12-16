@@ -76,6 +76,7 @@ call auskunft_kunde(2009);
 -- 1. Wenn der Preis einer Zutat geändert wird, wird ein Logeintrag erstellt
 
 create table preisentwicklung_zutat (
+	log_id int Primary Key AUTO_INCREMENT NOT NULL,
 	zutatname varchar(25),
 	preis_vorher decimal(5,2),
 	preis_nachher decimal(5,2),
