@@ -12,11 +12,11 @@ GRANT SELECT ON krautundrueben.* TO read_all_tables;
  
 -- 3. read_edit_kunde
 CREATE role read_edit_kunde;
-GRANT select, insert, DELETE ON krautundrueben.kunde TO read_edit_kunde;
+GRANT SELECT, INSERT, DELETE ON krautundrueben.kunde TO read_edit_kunde;
  
-GRANT select, insert, DELETE ON krautundrueben.kunde TO bestellung;
+GRANT SELECT, INSERT, DELETE ON krautundrueben.bestellung TO read_edit_kunde;
  
-GRANT select, insert, DELETE ON krautundrueben.kunde TO bestellung_enthält_zutat;
+GRANT SELECT, INSERT, DELETE ON krautundrueben.bestellung_enthält_zutat TO read_edit_kunde;
 
  
 -- 4. read_edit_zutat_rezept_lieferant
