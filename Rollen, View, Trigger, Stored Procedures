@@ -113,6 +113,7 @@ select * from preisentwicklung_zutat;
 -- dass diese Einträge auch wirklich leer sind und speichert das Ergebnis in die Tabelle 'gelöschte_kundendaten'
 
 create table gelöschte_kundendaten (
+	log_id int PRIMARY KEY AUTO_INCREMENT NOT NULL,
 	Kunden_ID int,
 	Daten_gelöscht varchar(3),
 	Datum timestamp
