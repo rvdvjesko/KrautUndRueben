@@ -34,7 +34,7 @@ CREATE TABLE bestellung_enthält_zutat (
 	bestellung_id int,
 	zutat_id int,
 	menge int,
-	PRIMARY KEY (bestellung_id, zutat_id) -- auch FK
+	PRIMARY KEY (bestellung_id, zutat_id) 
 );
 
 
@@ -57,7 +57,7 @@ CREATE TABLE lieferant_liefert_zutat (
 	lieferant_id int,
 	zutat_id int,
 	menge int,
-	PRIMARY KEY(lieferant_id, zutat_id) -- auch FK
+	PRIMARY KEY(lieferant_id, zutat_id) 
 );
 
 
@@ -80,7 +80,7 @@ CREATE TABLE rezept_enthält_zutat (
 	rezept_id int,
 	zutat_id int,
 	menge decimal(5,2),
-	PRIMARY KEY (rezept_id, zutat_id) -- auch FK
+	PRIMARY KEY (rezept_id, zutat_id) 
 );
 
 
@@ -88,7 +88,6 @@ CREATE TABLE rezept_enthält_zutat (
 CREATE TABLE rezept (
 	rezept_id int AUTO_INCREMENT NOT NULL,
 	rezeptname varchar(50),
-	-- nährstoffangabe_id int,-- FK
 	PRIMARY KEY (rezept_id)
 );
 
@@ -121,7 +120,7 @@ CREATE TABLE beschränkung (
 CREATE TABLE zutat_enthält_ernährungskategorie (
 	zutat_id int,
 	ernährungskategorie_id int,
-	PRIMARY KEY (zutat_id, ernährungskategorie_id) -- auch FK
+	PRIMARY KEY (zutat_id, ernährungskategorie_id) 
 );
 
 
@@ -129,7 +128,7 @@ CREATE TABLE zutat_enthält_ernährungskategorie (
 CREATE TABLE zutat_enthält_beschränkung (
 	zutat_id int,
 	beschränkung_id int,
-	PRIMARY KEY (zutat_id, beschränkung_id) -- auch FK
+	PRIMARY KEY (zutat_id, beschränkung_id) 
 );
 
 
