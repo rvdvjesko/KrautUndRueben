@@ -1,11 +1,13 @@
+USE KrautUndRueben;
+
 -- Auswahl aller Zutaten eines Rezeptes nach Rezeptname
 select r.Rezeptname, z.Zutatname
 from Zutat z
-inner join Rezept_enthält_Zutat ret
+join Rezept_enthält_Zutat ret
 on z.Zutat_ID = ret.Zutat_ID
-inner join Rezept r
+join Rezept r
 on r.Rezept_ID = ret.Rezept_ID
-where r.Rezeptname like 'Kartoffel%'
+where r.Rezeptname = 'Kartoffelsuppe'
 order by r.rezeptname;
 
 
@@ -13,30 +15,32 @@ order by r.rezeptname;
 -- Auswahl aller Rezepte einer bestimmten Ernährungskategorie
 SELECT r.Rezeptname, e.Ernährungskategorie
 FROM Ernährungskategorie e
-INNER JOIN Rezept_enthält_ernährungskategorie ret
+JOIN Rezept_enthält_ernährungskategorie ret
 ON e.Ernährungskategorie_ID = ret.Ernährungskategorie_ID
-INNER JOIN rezept r
+JOIN rezept r
 ON r.Rezept_ID = ret.Rezept_ID
-where e.Ernährungskategorie = 'vegan';
+where e.Ernährungskategorie = 'Vegetarisch';
 
 
 
 -- Auswahl aller Rezepte, die eine gewisse Zutat enthalten
 select r.Rezeptname, z.Zutatname
 from Zutat z
-inner join Rezept_enthält_Zutat ret
+join Rezept_enthält_Zutat ret
 on z.Zutat_ID = ret.Zutat_ID
-inner join Rezept r
+join Rezept r
 on r.Rezept_ID = ret.Rezept_ID
 where z.Zutatname like '%Milch%';
 
 
 
 -- Auswahl aller Zutaten, die bisher keinem Rezept zugeordnet sind
-select z.Zutatname
+select z.Zutatname, r.rezeptname
 from Zutat z
 left join Rezept_enthält_Zutat rez
 on z.Zutat_ID = rez.Zutat_ID
+left join rezept r 
+on r.rezept_id = rez.rezept_id  
 where rez.Zutat_ID is null;
 
 
@@ -44,33 +48,34 @@ where rez.Zutat_ID is null;
 -- Auswahl aller Rezepte, die eine bestimmte Kalorienmenge nicht überschreiten
 select r.Rezeptname, sum(z.Kalorien*rez.Menge) as Kalorien
 from Rezept r
-inner join Rezept_enthält_Zutat rez
+join Rezept_enthält_Zutat rez
 on r.Rezept_ID = rez.Rezept_ID
-inner join Zutat z
+join Zutat z
 on rez.Zutat_ID = z.Zutat_ID
 group by r.Rezeptname
-having Kalorien <= 500;
+having Kalorien <= 550; 
 
 
+# -- 
 
 -- Berechnung der durchschnittlichen Nährwerte aller Bestellungen eines Kunden 
 -- (mit der ID)
 select b.Kunde_ID, avg(z.Kalorien*bez.Menge) as Kalorien_durchschnittlich, avg(z.Kohlenhydrate*bez.Menge) as Kohlenhydrate_durchschnittlich, avg(z.Protein*bez.Menge) as Protein_durchschnittlich
 from Bestellung b
-inner join Bestellung_enthält_Zutat bez
+join Bestellung_enthält_Zutat bez
 on b.Bestellung_ID = bez.Bestellung_ID
-inner join Zutat z
+join Zutat z
 on bez.Zutat_ID = z.Zutat_ID
 group by Kunde_ID;
 
 -- (mit dem Namen)
 select b.Kunde_ID, k.Vorname, k.Nachname, avg(z.Kalorien*bez.Menge) as Kalorien_durchschnittlich, avg(z.Kohlenhydrate*bez.Menge) as Kohlenhydrate_durchschnittlich, avg(z.Protein*bez.Menge) as Protein_durchschnittlich
 from Bestellung b
-inner join Bestellung_enthält_Zutat bez
+join Bestellung_enthält_Zutat bez
 on b.Bestellung_ID = bez.Bestellung_ID
-inner join Zutat z
+join Zutat z
 on bez.Zutat_ID = z.Zutat_ID
-inner join Kunde k
+join Kunde k
 on b.Kunde_ID = k.Kunde_ID
 group by Kunde_ID;
 
@@ -138,7 +143,7 @@ where m.mengeneinheit like 'Stück';
 
 
 -- Auswahl aller Kunden, die Bestellungen mit einer bestimmten Zutat haben
-select k.kunde_id, k.vorname, k.nachname, k.ort 
+select k.kunde_id, k.vorname, k.nachname, k.ort, b.bestellung_id as Bestellnummer  
 from Kunde k 
 join bestellung b 
 on b.kunde_id  = k.kunde_id
@@ -157,7 +162,7 @@ from bestellung b ;
 
 
 
--- Auswahl aller Lieferanten, die Zutaten liefern und in Rezepten enthalten sind
+-- Auswahl aller Lieferanten, die Zutaten liefern die in Rezepten enthalten sind
 select l.lieferantenname, z.zutatname, r.rezeptname 
 from lieferant l
 join lieferant_liefert_zutat llz 
@@ -185,4 +190,7 @@ SELECT z.Zutatname
 FROM zutat z
 LEFT JOIN zutat_enthält_beschränkung zeb
 ON z.Zutat_ID = zeb.Zutat_ID
-WHERE zeb.Beschränkung_ID != 1 OR zeb.zutat_id IS Null;
+WHERE zeb.beschränkung_id  != 1 OR zeb.zutat_id IS Null
+order by z.zutatname;
+
+select * from beschränkung;
